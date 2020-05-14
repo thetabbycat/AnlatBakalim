@@ -1,0 +1,12 @@
+[
+  {
+    "word_id": 1,
+    "word": "match",
+    "forbidden_words": ["football", "soccer", "code"]
+  },
+  {
+    "word_id": 1,
+    "word": "match",
+    "forbidden_words": ["football", "soccer", "code"]
+  }
+]

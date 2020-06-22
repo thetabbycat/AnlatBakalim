@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (5.1.0)
+  - SwiftUICardStack (0.0.3)
+  - Sync (6.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.1)
+  - SwiftUICardStack
+  - Sync (~> 6)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - SwiftUICardStack
+    - Sync
+
+SPEC CHECKSUMS:
+  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  SwiftUICardStack: 276362f0b364dfb6fe8d2c3b8eb4a9319456cbb5
+  Sync: a6288926bee65a1ac3c72055446c558776af43f3
+
+PODFILE CHECKSUM: d025023a9ade7acb5ac428ce9785899a6b53cfe5
+
+COCOAPODS: 1.8.4

@@ -9,13 +9,18 @@
 import SwiftUI
 
 struct TimerRing: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+    var fontSize: Int
+    var remainingTime: String
 
-struct TimerRing_Previews: PreviewProvider {
-    static var previews: some View {
-        TimerRing()
+    var body: some View {
+
+        return  HStack {
+            
+            Text("\(remainingTime)")
+                .foregroundColor(.black)
+                .font(Font.system(size: CGFloat(self.fontSize), design: .monospaced))
+                .fontWeight(.bold)
+
+        }
     }
 }

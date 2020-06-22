@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-AnlatBakalim/Pods-AnlatBakalim-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/SwiftUICardStack/SwiftUICardStack.framework
+${BUILT_PRODUCTS_DIR}/Sync/Sync.framework

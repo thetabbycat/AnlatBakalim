@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "old_paper_stock_02_by_ftourini_d48ubt0.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

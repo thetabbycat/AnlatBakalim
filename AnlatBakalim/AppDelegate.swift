@@ -11,11 +11,28 @@ import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    lazy var fetcher: Fetcher = {
+        let fetcher = Fetcher()
+        
+        return fetcher
+    }()
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        print(UserDefaults.standard.bool(forKey: "hasWordsImported"))
+        if UserDefaults.standard.bool(forKey: "hasWordsImported") == false {
+                Fetcher().getLocalWords()
+            settings.set(true, forKey: "hasWordsImported")
+        }
+        
+    
+
+        
+        
         return true
     }
 

@@ -1,0 +1,6 @@
+framework module SwiftUICardStack {
+  umbrella header "SwiftUICardStack-umbrella.h"
+
+  export *
+  module * { export * }
+}

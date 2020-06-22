@@ -1,12 +1,52 @@
 [
-  {
-    "word_id": 1,
-    "word": "match",
-    "forbidden_words": ["football", "soccer", "code"]
-  },
-  {
-    "word_id": 1,
-    "word": "match",
-    "forbidden_words": ["football", "soccer", "code"]
-  }
+    {
+        "word_id": 23,
+        "word": "palamut",
+        "forbidden_words": [
+            "balık",
+            "deniz",
+            "olta"
+        ]
+    },
+    {
+        "word_id": 24,
+        "word": "çay",
+        "forbidden_words": [
+            "içmek",
+            "sıcak",
+            "keyif"
+        ]
+    }
+    ,
+    {
+        "word_id": 25,
+        "word": "kitap",
+        "forbidden_words": [
+            "okumak",
+            "gözlük",
+            "kütüphane"
+        ]
+    }
+    ,
+    {
+        "word_id": 26,
+        "word": "yoğurt local",
+        "forbidden_words": [
+            "beyaz",
+            "yemek",
+            "yanında"
+        ]
+    }
+    ,
+    {
+        "word_id": 27,
+        "word": "çikolata local",
+        "forbidden_words": [
+            "tatlı",
+            "yemek",
+            "koklamak"
+        ]
+    }
+    
+    
 ]

@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A002E01249E595400DC6103 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A002E00249E595400DC6103 /* Game.swift */; };
+		0A002E03249E938B00DC6103 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A002E02249E938B00DC6103 /* Button.swift */; };
+		0A3716682468576800D6A0F9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3716672468576800D6A0F9 /* Settings.swift */; };
+		0A37166A24686C0900D6A0F9 /* CheckInternetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A37166924686C0900D6A0F9 /* CheckInternetConnection.swift */; };
 		0A3C7018246567200088904A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C7017246567200088904A /* AppDelegate.swift */; };
 		0A3C701A246567200088904A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C7019246567200088904A /* SceneDelegate.swift */; };
 		0A3C701D246567200088904A /* AnlatBakalim.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C701B246567200088904A /* AnlatBakalim.xcdatamodeld */; };
@@ -14,9 +18,44 @@
 		0A3C7021246567220088904A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C7020246567220088904A /* Assets.xcassets */; };
 		0A3C7024246567220088904A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C7023246567220088904A /* Preview Assets.xcassets */; };
 		0A3C7027246567220088904A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C7025246567220088904A /* LaunchScreen.storyboard */; };
+		0A3C703124656C700088904A /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C703024656C700088904A /* Word.swift */; };
+		0A3C7035246573470088904A /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C7034246573470088904A /* Fetcher.swift */; };
+		0A3C703B24658BD00088904A /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C703A24658BD00088904A /* words.json */; };
+		0A3C703D2465A1230088904A /* SingleWordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C703C2465A1230088904A /* SingleWordItem.swift */; };
+		0A3C70432465D65C0088904A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C70422465D65C0088904A /* Utils.swift */; };
+		0A3C70452465DD3E0088904A /* TimerRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C70442465DD3E0088904A /* TimerRing.swift */; };
+		0A90007D249541190091733D /* Kalam-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A90007A249541190091733D /* Kalam-Regular.ttf */; };
+		0A90007E249541190091733D /* Kalam-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A90007B249541190091733D /* Kalam-Light.ttf */; };
+		0A90007F249541190091733D /* Kalam-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A90007C249541190091733D /* Kalam-Bold.ttf */; };
+		0A9000802495414A0091733D /* Kalam-Bold.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0A90007C249541190091733D /* Kalam-Bold.ttf */; };
+		0A9000812495414A0091733D /* Kalam-Light.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0A90007B249541190091733D /* Kalam-Light.ttf */; };
+		0A9000822495414A0091733D /* Kalam-Regular.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0A90007A249541190091733D /* Kalam-Regular.ttf */; };
+		0A950105249FA4C00049477E /* GoodButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A950104249FA4C00049477E /* GoodButton.swift */; };
+		0AB4D339248BD67E0084DFB5 /* crumbling.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0AB4D338248BD67E0084DFB5 /* crumbling.mp3 */; };
+		0AB4D33B248BD6920084DFB5 /* SoundEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB4D33A248BD6920084DFB5 /* SoundEffects.swift */; };
+		1364F68A39D8166BA59202E3 /* Pods_AnlatBakalim.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C61D418D2D761FE013BE89 /* Pods_AnlatBakalim.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0AB4D333248BD56A0084DFB5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Fonts;
+			dstSubfolderSpec = 7;
+			files = (
+				0A9000802495414A0091733D /* Kalam-Bold.ttf in CopyFiles */,
+				0A9000812495414A0091733D /* Kalam-Light.ttf in CopyFiles */,
+				0A9000822495414A0091733D /* Kalam-Regular.ttf in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0A002E00249E595400DC6103 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		0A002E02249E938B00DC6103 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		0A3716672468576800D6A0F9 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		0A37166924686C0900D6A0F9 /* CheckInternetConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternetConnection.swift; sourceTree = "<group>"; };
 		0A3C7014246567200088904A /* AnlatBakalim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnlatBakalim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A3C7017246567200088904A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A3C7019246567200088904A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +65,21 @@
 		0A3C7023246567220088904A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0A3C7026246567220088904A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A3C7028246567220088904A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A3C703024656C700088904A /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		0A3C7034246573470088904A /* Fetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
+		0A3C703A24658BD00088904A /* words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
+		0A3C703C2465A1230088904A /* SingleWordItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleWordItem.swift; sourceTree = "<group>"; };
+		0A3C70422465D65C0088904A /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		0A3C70442465DD3E0088904A /* TimerRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerRing.swift; sourceTree = "<group>"; };
+		0A90007A249541190091733D /* Kalam-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kalam-Regular.ttf"; sourceTree = "<group>"; };
+		0A90007B249541190091733D /* Kalam-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kalam-Light.ttf"; sourceTree = "<group>"; };
+		0A90007C249541190091733D /* Kalam-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kalam-Bold.ttf"; sourceTree = "<group>"; };
+		0A950104249FA4C00049477E /* GoodButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodButton.swift; sourceTree = "<group>"; };
+		0AB4D338248BD67E0084DFB5 /* crumbling.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = crumbling.mp3; sourceTree = "<group>"; };
+		0AB4D33A248BD6920084DFB5 /* SoundEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffects.swift; sourceTree = "<group>"; };
+		27E049616EF06099C7267BC1 /* Pods-AnlatBakalim.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnlatBakalim.release.xcconfig"; path = "Target Support Files/Pods-AnlatBakalim/Pods-AnlatBakalim.release.xcconfig"; sourceTree = "<group>"; };
+		32C61D418D2D761FE013BE89 /* Pods_AnlatBakalim.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnlatBakalim.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F746C0472A9023D313D724C9 /* Pods-AnlatBakalim.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnlatBakalim.debug.xcconfig"; path = "Target Support Files/Pods-AnlatBakalim/Pods-AnlatBakalim.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1364F68A39D8166BA59202E3 /* Pods_AnlatBakalim.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +99,8 @@
 			children = (
 				0A3C7016246567200088904A /* AnlatBakalim */,
 				0A3C7015246567200088904A /* Products */,
+				DB31CC866AD1A249D7AF26F7 /* Pods */,
+				4B0AE2EEC43B64BAADF6D358 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,14 +115,26 @@
 		0A3C7016246567200088904A /* AnlatBakalim */ = {
 			isa = PBXGroup;
 			children = (
+				0AB4D32A248BD4D00084DFB5 /* Fonts */,
+				0A3C703A24658BD00088904A /* words.json */,
+				0A3C702F24656C4F0088904A /* Services */,
+				0A3C702E24656C420088904A /* Models */,
 				0A3C7017246567200088904A /* AppDelegate.swift */,
 				0A3C7019246567200088904A /* SceneDelegate.swift */,
 				0A3C701E246567200088904A /* ContentView.swift */,
+				0AB4D338248BD67E0084DFB5 /* crumbling.mp3 */,
 				0A3C7020246567220088904A /* Assets.xcassets */,
 				0A3C7025246567220088904A /* LaunchScreen.storyboard */,
 				0A3C7028246567220088904A /* Info.plist */,
 				0A3C701B246567200088904A /* AnlatBakalim.xcdatamodeld */,
 				0A3C7022246567220088904A /* Preview Content */,
+				0A3C703C2465A1230088904A /* SingleWordItem.swift */,
+				0A3C70422465D65C0088904A /* Utils.swift */,
+				0A3C70442465DD3E0088904A /* TimerRing.swift */,
+				0A3716672468576800D6A0F9 /* Settings.swift */,
+				0A002E00249E595400DC6103 /* Game.swift */,
+				0A002E02249E938B00DC6103 /* Button.swift */,
+				0A950104249FA4C00049477E /* GoodButton.swift */,
 			);
 			path = AnlatBakalim;
 			sourceTree = "<group>";
@@ -78,6 +147,51 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		0A3C702E24656C420088904A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0A3C703024656C700088904A /* Word.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0A3C702F24656C4F0088904A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0A3C7034246573470088904A /* Fetcher.swift */,
+				0A37166924686C0900D6A0F9 /* CheckInternetConnection.swift */,
+				0AB4D33A248BD6920084DFB5 /* SoundEffects.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0AB4D32A248BD4D00084DFB5 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0A90007C249541190091733D /* Kalam-Bold.ttf */,
+				0A90007B249541190091733D /* Kalam-Light.ttf */,
+				0A90007A249541190091733D /* Kalam-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		4B0AE2EEC43B64BAADF6D358 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				32C61D418D2D761FE013BE89 /* Pods_AnlatBakalim.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB31CC866AD1A249D7AF26F7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F746C0472A9023D313D724C9 /* Pods-AnlatBakalim.debug.xcconfig */,
+				27E049616EF06099C7267BC1 /* Pods-AnlatBakalim.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,15 +199,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A3C702B246567220088904A /* Build configuration list for PBXNativeTarget "AnlatBakalim" */;
 			buildPhases = (
+				233583FFFB08978FCEFC3C2E /* [CP] Check Pods Manifest.lock */,
 				0A3C7010246567200088904A /* Sources */,
 				0A3C7011246567200088904A /* Frameworks */,
 				0A3C7012246567200088904A /* Resources */,
+				E54D663CF29CECD48CC0919B /* [CP] Embed Pods Frameworks */,
+				0AB4D333248BD56A0084DFB5 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = AnlatBakalim;
+			packageProductDependencies = (
+			);
 			productName = AnlatBakalim;
 			productReference = 0A3C7014246567200088904A /* AnlatBakalim.app */;
 			productType = "com.apple.product-type.application";
@@ -122,6 +241,8 @@
 				Base,
 			);
 			mainGroup = 0A3C700B2465671F0088904A;
+			packageReferences = (
+			);
 			productRefGroup = 0A3C7015246567200088904A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -136,23 +257,81 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A90007D249541190091733D /* Kalam-Regular.ttf in Resources */,
+				0AB4D339248BD67E0084DFB5 /* crumbling.mp3 in Resources */,
 				0A3C7027246567220088904A /* LaunchScreen.storyboard in Resources */,
+				0A3C703B24658BD00088904A /* words.json in Resources */,
+				0A90007E249541190091733D /* Kalam-Light.ttf in Resources */,
 				0A3C7024246567220088904A /* Preview Assets.xcassets in Resources */,
+				0A90007F249541190091733D /* Kalam-Bold.ttf in Resources */,
 				0A3C7021246567220088904A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		233583FFFB08978FCEFC3C2E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AnlatBakalim-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E54D663CF29CECD48CC0919B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AnlatBakalim/Pods-AnlatBakalim-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AnlatBakalim/Pods-AnlatBakalim-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AnlatBakalim/Pods-AnlatBakalim-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0A3C7010246567200088904A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A37166A24686C0900D6A0F9 /* CheckInternetConnection.swift in Sources */,
+				0A3C7035246573470088904A /* Fetcher.swift in Sources */,
+				0AB4D33B248BD6920084DFB5 /* SoundEffects.swift in Sources */,
+				0A002E01249E595400DC6103 /* Game.swift in Sources */,
 				0A3C701D246567200088904A /* AnlatBakalim.xcdatamodeld in Sources */,
 				0A3C7018246567200088904A /* AppDelegate.swift in Sources */,
+				0A3C703124656C700088904A /* Word.swift in Sources */,
+				0A002E03249E938B00DC6103 /* Button.swift in Sources */,
+				0A3716682468576800D6A0F9 /* Settings.swift in Sources */,
 				0A3C701F246567200088904A /* ContentView.swift in Sources */,
+				0A3C703D2465A1230088904A /* SingleWordItem.swift in Sources */,
+				0A3C70452465DD3E0088904A /* TimerRing.swift in Sources */,
 				0A3C701A246567200088904A /* SceneDelegate.swift in Sources */,
+				0A950105249FA4C00049477E /* GoodButton.swift in Sources */,
+				0A3C70432465D65C0088904A /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +465,7 @@
 		};
 		0A3C702C246567220088904A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F746C0472A9023D313D724C9 /* Pods-AnlatBakalim.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -306,6 +486,7 @@
 		};
 		0A3C702D246567220088904A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27E049616EF06099C7267BC1 /* Pods-AnlatBakalim.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

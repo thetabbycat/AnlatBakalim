@@ -17,8 +17,9 @@ struct TimerRing: View {
         return  HStack {
             
             Text("\(remainingTime)")
-                .foregroundColor(.black)
-                .font(Font.system(size: CGFloat(self.fontSize), design: .monospaced))
+                  .foregroundColor(Color("MineShaft"))
+            //    .font(Font.system(size: CGFloat(self.fontSize), design: .monospaced))
+                .font(.custom("monogramextended", size: CGFloat(self.fontSize)))
                 .fontWeight(.bold)
 
         }

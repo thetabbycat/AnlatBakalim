@@ -56,6 +56,7 @@
 		<string>Fonts/Kalam-Bold.ttf</string>
 		<string>Fonts/Kalam-Light.ttf</string>
 		<string>Fonts/Kalam-Regular.ttf</string>
+		<string>Fonts/monogram_extended.ttf</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

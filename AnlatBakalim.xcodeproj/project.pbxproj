@@ -31,8 +31,19 @@
 		0A9000812495414A0091733D /* Kalam-Light.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0A90007B249541190091733D /* Kalam-Light.ttf */; };
 		0A9000822495414A0091733D /* Kalam-Regular.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0A90007A249541190091733D /* Kalam-Regular.ttf */; };
 		0A950105249FA4C00049477E /* GoodButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A950104249FA4C00049477E /* GoodButton.swift */; };
+		0A9B8F6D24A88DD000CA3BEA /* monogram_extended.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A9B8F6C24A88DD000CA3BEA /* monogram_extended.ttf */; };
+		0A9B8F6E24A88E3900CA3BEA /* monogram_extended.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0A9B8F6C24A88DD000CA3BEA /* monogram_extended.ttf */; };
 		0AB4D339248BD67E0084DFB5 /* crumbling.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0AB4D338248BD67E0084DFB5 /* crumbling.mp3 */; };
 		0AB4D33B248BD6920084DFB5 /* SoundEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB4D33A248BD6920084DFB5 /* SoundEffects.swift */; };
+		0AC2219924A8D43A007E3BE9 /* point2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0AC2219124A8D439007E3BE9 /* point2.mp3 */; };
+		0AC2219A24A8D43A007E3BE9 /* lose.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0AC2219224A8D43A007E3BE9 /* lose.mp3 */; };
+		0AC2219B24A8D43A007E3BE9 /* lose2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0AC2219324A8D43A007E3BE9 /* lose2.mp3 */; };
+		0AC2219C24A8D43A007E3BE9 /* lose3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0AC2219424A8D43A007E3BE9 /* lose3.mp3 */; };
+		0AC2219D24A8D43A007E3BE9 /* newGame.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0AC2219524A8D43A007E3BE9 /* newGame.mp3 */; };
+		0AC2219E24A8D43A007E3BE9 /* newGame2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0AC2219624A8D43A007E3BE9 /* newGame2.mp3 */; };
+		0AC2219F24A8D43A007E3BE9 /* point3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0AC2219724A8D43A007E3BE9 /* point3.mp3 */; };
+		0AC221A024A8D43A007E3BE9 /* point.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0AC2219824A8D43A007E3BE9 /* point.mp3 */; };
+		0AC221A224A8DA96007E3BE9 /* menu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0AC221A124A8DA96007E3BE9 /* menu.mp3 */; };
 		1364F68A39D8166BA59202E3 /* Pods_AnlatBakalim.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C61D418D2D761FE013BE89 /* Pods_AnlatBakalim.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +54,7 @@
 			dstPath = Fonts;
 			dstSubfolderSpec = 7;
 			files = (
+				0A9B8F6E24A88E3900CA3BEA /* monogram_extended.ttf in CopyFiles */,
 				0A9000802495414A0091733D /* Kalam-Bold.ttf in CopyFiles */,
 				0A9000812495414A0091733D /* Kalam-Light.ttf in CopyFiles */,
 				0A9000822495414A0091733D /* Kalam-Regular.ttf in CopyFiles */,
@@ -75,8 +87,18 @@
 		0A90007B249541190091733D /* Kalam-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kalam-Light.ttf"; sourceTree = "<group>"; };
 		0A90007C249541190091733D /* Kalam-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kalam-Bold.ttf"; sourceTree = "<group>"; };
 		0A950104249FA4C00049477E /* GoodButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodButton.swift; sourceTree = "<group>"; };
+		0A9B8F6C24A88DD000CA3BEA /* monogram_extended.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = monogram_extended.ttf; sourceTree = "<group>"; };
 		0AB4D338248BD67E0084DFB5 /* crumbling.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = crumbling.mp3; sourceTree = "<group>"; };
 		0AB4D33A248BD6920084DFB5 /* SoundEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffects.swift; sourceTree = "<group>"; };
+		0AC2219124A8D439007E3BE9 /* point2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = point2.mp3; sourceTree = "<group>"; };
+		0AC2219224A8D43A007E3BE9 /* lose.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lose.mp3; sourceTree = "<group>"; };
+		0AC2219324A8D43A007E3BE9 /* lose2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lose2.mp3; sourceTree = "<group>"; };
+		0AC2219424A8D43A007E3BE9 /* lose3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lose3.mp3; sourceTree = "<group>"; };
+		0AC2219524A8D43A007E3BE9 /* newGame.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = newGame.mp3; sourceTree = "<group>"; };
+		0AC2219624A8D43A007E3BE9 /* newGame2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = newGame2.mp3; sourceTree = "<group>"; };
+		0AC2219724A8D43A007E3BE9 /* point3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = point3.mp3; sourceTree = "<group>"; };
+		0AC2219824A8D43A007E3BE9 /* point.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = point.mp3; sourceTree = "<group>"; };
+		0AC221A124A8DA96007E3BE9 /* menu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = menu.mp3; sourceTree = "<group>"; };
 		27E049616EF06099C7267BC1 /* Pods-AnlatBakalim.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnlatBakalim.release.xcconfig"; path = "Target Support Files/Pods-AnlatBakalim/Pods-AnlatBakalim.release.xcconfig"; sourceTree = "<group>"; };
 		32C61D418D2D761FE013BE89 /* Pods_AnlatBakalim.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnlatBakalim.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F746C0472A9023D313D724C9 /* Pods-AnlatBakalim.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnlatBakalim.debug.xcconfig"; path = "Target Support Files/Pods-AnlatBakalim/Pods-AnlatBakalim.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +148,15 @@
 				0A3C7020246567220088904A /* Assets.xcassets */,
 				0A3C7025246567220088904A /* LaunchScreen.storyboard */,
 				0A3C7028246567220088904A /* Info.plist */,
+				0AC2219224A8D43A007E3BE9 /* lose.mp3 */,
+				0AC2219324A8D43A007E3BE9 /* lose2.mp3 */,
+				0AC2219424A8D43A007E3BE9 /* lose3.mp3 */,
+				0AC221A124A8DA96007E3BE9 /* menu.mp3 */,
+				0AC2219524A8D43A007E3BE9 /* newGame.mp3 */,
+				0AC2219624A8D43A007E3BE9 /* newGame2.mp3 */,
+				0AC2219824A8D43A007E3BE9 /* point.mp3 */,
+				0AC2219124A8D439007E3BE9 /* point2.mp3 */,
+				0AC2219724A8D43A007E3BE9 /* point3.mp3 */,
 				0A3C701B246567200088904A /* AnlatBakalim.xcdatamodeld */,
 				0A3C7022246567220088904A /* Preview Content */,
 				0A3C703C2465A1230088904A /* SingleWordItem.swift */,
@@ -170,6 +201,7 @@
 			children = (
 				0A90007C249541190091733D /* Kalam-Bold.ttf */,
 				0A90007B249541190091733D /* Kalam-Light.ttf */,
+				0A9B8F6C24A88DD000CA3BEA /* monogram_extended.ttf */,
 				0A90007A249541190091733D /* Kalam-Regular.ttf */,
 			);
 			path = Fonts;
@@ -257,14 +289,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AC2219E24A8D43A007E3BE9 /* newGame2.mp3 in Resources */,
 				0A90007D249541190091733D /* Kalam-Regular.ttf in Resources */,
 				0AB4D339248BD67E0084DFB5 /* crumbling.mp3 in Resources */,
 				0A3C7027246567220088904A /* LaunchScreen.storyboard in Resources */,
+				0A9B8F6D24A88DD000CA3BEA /* monogram_extended.ttf in Resources */,
+				0AC2219F24A8D43A007E3BE9 /* point3.mp3 in Resources */,
+				0AC2219B24A8D43A007E3BE9 /* lose2.mp3 in Resources */,
+				0AC2219D24A8D43A007E3BE9 /* newGame.mp3 in Resources */,
 				0A3C703B24658BD00088904A /* words.json in Resources */,
+				0AC221A024A8D43A007E3BE9 /* point.mp3 in Resources */,
 				0A90007E249541190091733D /* Kalam-Light.ttf in Resources */,
+				0AC221A224A8DA96007E3BE9 /* menu.mp3 in Resources */,
+				0AC2219C24A8D43A007E3BE9 /* lose3.mp3 in Resources */,
+				0AC2219924A8D43A007E3BE9 /* point2.mp3 in Resources */,
 				0A3C7024246567220088904A /* Preview Assets.xcassets in Resources */,
 				0A90007F249541190091733D /* Kalam-Bold.ttf in Resources */,
 				0A3C7021246567220088904A /* Assets.xcassets in Resources */,
+				0AC2219A24A8D43A007E3BE9 /* lose.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,17 +14,18 @@ import Alamofire
 class Fetcher: ObservableObject {
     private let dataStack: DataStack
     @Published var words = [Word]()
+    private var isPremium =  UserDefaults.standard.optionalBool(forKey: "isPremium") ?? false
     
     
     init() {
         self.dataStack = DataStack(modelName: "AnlatBakalim")
-        self.words = fetchLocalUsers()
+        self.words = fetchLocalUsers().shuffled()
     }
     
    func fetchLocalUsers() -> [Word] {
         let request: NSFetchRequest<Word> = Word.fetchRequest()
         
-        return try! self.dataStack.viewContext.fetch(request)
+    return try! self.dataStack.viewContext.fetch(request)
     }
     
     
@@ -44,8 +45,8 @@ class Fetcher: ObservableObject {
     }
     
     func syncUsingLocalJSON(completion: @escaping (_ result: VoidResult) -> ()) {
-        let fileName = "words.json"
-        guard let url = URL(string: fileName) else { return }
+
+        guard let url = URL(string: self.isPremium ? "premiumWords.json" : "words.json") else { return }
         guard let filePath = Bundle.main.path(forResource: url.deletingPathExtension().absoluteString, ofType: url.pathExtension) else { return }
         guard let data = try? Data(contentsOf: URL(fileURLWithPath: filePath)) else { return }
         guard let json = try! JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]] else { return }
@@ -59,14 +60,14 @@ class Fetcher: ObservableObject {
         self.syncUsingLocalJSON { result in
             switch result {
                 case .success:
-                    print("Sync ok.")
+                    print("Local Sync ok.")
                 case .failure(let error):
                     print(error)
             }
         }
     }
     
-    func refresh() {
+    func getRemoteWords() {
         self.syncUsingAlamofire { result in
             switch result {
                 case .success:

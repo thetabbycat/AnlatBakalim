@@ -24,7 +24,7 @@ class GameManager: ObservableObject {
     // MARK: - Active Variables
     @Published var timeRemaining = 0
     @Published var breakTime = 0
-    @Published var round = 5
+    @Published var round = UserDefaults.standard.optionalInt(forKey: "round") ?? 5
     // MARK: - Mechanic Variables
     @Published var isActive = false
     @Published var isBreakActive = false

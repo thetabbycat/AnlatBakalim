@@ -9,10 +9,17 @@
 import SwiftUI
 
 
-struct Dimension: Identifiable {
+struct TimeItem: Identifiable {
     let id: Int
     let name: String
     let seconds: Int
+}
+
+
+struct LevelItem: Identifiable {
+    let id: Int
+    let name: String
+    let level: Int
 }
 
 
@@ -21,6 +28,7 @@ struct Dimension: Identifiable {
 struct Settings: View {
     
     @State var roundTimeSelection = UserDefaults.standard.integer(forKey: "roundTimeSelection")
+    @State var levelSelection = UserDefaults.standard.integer(forKey: "levelSelection")
     @State var roundTime = UserDefaults.standard.integer(forKey: "time")
     @State var roundCount = UserDefaults.standard.integer(forKey: "round")
     
@@ -32,10 +40,17 @@ struct Settings: View {
     
     
     var seconds = [
-        Dimension(id: 0, name: "10 Saniye", seconds: 10),
-        Dimension(id: 1, name: "1 Dakika", seconds: 60),
-        Dimension(id: 2, name: "3 Dakika", seconds: 180),
-        Dimension(id: 3, name: "5 Dakika", seconds: 300)
+        TimeItem(id: 0, name: "10 Saniye", seconds: 10),
+        TimeItem(id: 1, name: "1 Dakika", seconds: 60),
+        TimeItem(id: 2, name: "3 Dakika", seconds: 180),
+       TimeItem(id: 3, name: "5 Dakika", seconds: 300)
+    ]
+
+    
+    var levels = [
+        LevelItem(id: 0, name: "Basit", level: 1),
+        LevelItem(id: 1, name: "Orta Zorluk", level: 2),
+        LevelItem(id: 2, name: "Zor", level: 3),
     ]
 
 
@@ -46,8 +61,28 @@ struct Settings: View {
     var body: some View {
         NavigationView {
         Form {
+            Section(header: Text("Market")) {
+                HStack {
+                    Text("+1000 kelime daha").font(.system(size: 14)).bold()
+                    Spacer()
+                    Text("36 TL").font(.caption)
+                        .onTapGesture(count: 2) {
+                            self.showingEasterEgg = true
+                    }
+                    
+                }
+            }
             Section(header: Text("Oyun Ayarları")){
-            
+                
+                Picker(selection: $levelSelection, label: Text("Zorluk seviyesi")) {
+                    ForEach(levels) { lev in
+                        Text(lev.name)
+                    }
+                }
+                .onReceive([self.levelSelection].publisher.first()) { (value) in
+                    settings.set(value, forKey: "level")
+                }
+
             Picker(selection: $roundTimeSelection, label: Text("Tur Süresi")) {
                 ForEach(seconds) { sec in
                     Text(sec.name)
@@ -57,18 +92,15 @@ struct Settings: View {
                 settings.set(value, forKey: "roundTimeSelection")
                 settings.set(self.seconds[value].seconds, forKey: "time")
             }
-            .padding()
-            
-           
+
                 Stepper("Tur Sayısı: \(self.Game.round)", onIncrement: {
                     self.Game.round += 1
-                    settings.set(self.roundCount, forKey: "round")
+                    settings.set(self.Game.round, forKey: "round")
                     
                 }, onDecrement: {
                     self.Game.round -= 1
-                    settings.set(self.roundCount, forKey: "round")
+                    settings.set(self.Game.round, forKey: "round")
                 })
-                .padding(.horizontal)
                  }
 
             Section(header: Text("Hakkında")) {

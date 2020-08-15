@@ -1,0 +1,20 @@
+[
+    {
+        "word_id": 23,
+        "word": "palamut",
+        "level": 1,
+        "forbidden_words": ["balık", "deniz", "olta", "yakalamak", "uskumru", "ağaç", "sincap", "Karadeniz", "beyaz et", "kılçık", "torik", "meşe"]
+    },
+    {
+        "word_id": 24,
+        "level": 1,
+        "word": "olta",
+        "forbidden_words": ["deniz", "balık", "akarsu", "yakalamak", "takım", "iğne", "yem", "düşmek", "gelmek", "takılmak", "ağ", "avlanmak", "vurmak", "yutmak"]
+    },
+    {
+        "word_id": 25,
+        "level": 1,
+        "word": "kılçık",
+        "forbidden_words": ["balık", "yemek", "takılmak", "omurga", "kemik", "hayvan", "fasulye", "bakla", "ayıklamak", "tüy", "güreş"]
+    },
+]

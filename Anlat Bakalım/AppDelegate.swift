@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import Purchases
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

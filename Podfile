@@ -10,6 +10,5 @@ target 'Anlat Bakalım' do
   pod 'SwiftyJSON'
   pod 'Alamofire-SwiftyJSON'
   pod "SwiftUICardStack"
-  pod 'Purchases'
 
 end

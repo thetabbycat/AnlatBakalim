@@ -1,13 +1,6 @@
-//
-import Purchases
+
 import SwiftUI
 import SwiftUICardStack
-//  ContentView.swift
-//  AnlatBakalim
-//
-//  Created by Steven J. Selcuk on 8.05.2020.
-//  Copyright © 2020 Steven J. Selcuk. All rights reserved.
-//
 import UIKit
 
 let settings = UserDefaults.standard
@@ -21,6 +14,7 @@ struct ContentView: View {
 
     var isIpad = UIDevice.current.model.hasPrefix("iPad")
 
+
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
     @State var reloadToken = UUID()
@@ -29,9 +23,12 @@ struct ContentView: View {
     @State private var isWrong = false
     @State private var isRight = false
     @State private var isSettingsOpen = false
+
     @State var redTeamEmoji = "🥑"
     @State var blueTeamEmoji = "🚀"
-
+    @State var redTeamName = "Avokadolar"
+    @State var blueTeamName = "Roket Takımı"
+    
     init() {
         do {
             try reachability.startNotifier()
@@ -42,7 +39,6 @@ struct ContentView: View {
             print("no connection")
         }
     }
-    
 
     func refresh() {
         reloadToken = UUID()
@@ -91,7 +87,7 @@ struct ContentView: View {
                 }
             }
             .buttonStyle(MyButtonStyle())
-            .offset(x: self.isIpad ? screen.width / 2 - 70 : screen.width / 2 - 45 , y: -(screen.height / 2 - 80))
+            .offset(x: self.isIpad ? screen.width / 2 - 70 : screen.width / 2 - 45, y: -(screen.height / 2 - 80))
             VStack {
                 if self.isWrong {
                     Image("Wrong")
@@ -121,33 +117,39 @@ struct ContentView: View {
                 if self.Game.ended == false && self.Game.round >= 1 {
                     HStack {
                         VStack(spacing: 1) {
-                            Text(self.redTeamEmoji)
-                                .font(Font.system(size: 48))
-                                .transition(AnyTransition.asymmetric(insertion: .scale, removal: .scale).combined(with: .opacity))
-                                .frame(maxWidth: 64, maxHeight: 64, alignment: .center)
-                                .padding(5)
-                                .contextMenu {
-                                    Button(action: {
-                                        self.redTeamEmoji = "🥑"
-                                    }) {
-                                        Text("🥑 Avokadolar")
-                                    }
-                                    Button(action: {
-                                        self.redTeamEmoji = "🧠"
-                                    }) {
-                                        Text("🧠 Beyin Takımı")
-                                    }
-                                    Button(action: {
-                                        self.redTeamEmoji = "🔥"
-                                    }) {
-                                        Text("🔥 Yanarca")
-                                    }
-                                    Button(action: {
-                                        self.redTeamEmoji = "🐈"
-                                    }) {
-                                        Text("🐈 Kedi Kuyruğu")
-                                    }
+                            VStack {
+                                Text(self.redTeamEmoji)
+                                    .font(Font.system(size: 48))
+                                    .transition(AnyTransition.asymmetric(insertion: .scale, removal: .scale).combined(with: .opacity))
+                                    .frame(maxWidth: 64, maxHeight: 64, alignment: .center)
+                            }
+                            .contextMenu {
+                                Button(action: {
+                                    self.redTeamEmoji = "🥑"
+                                    self.redTeamName = "Avokadolar"
+                                }) {
+                                    Text("🥑 Avokadolar")
                                 }
+                                Button(action: {
+                                    self.redTeamEmoji = "🥜"
+                                    self.redTeamName = "Fıstıklar"
+                                }) {
+                                    Text("🥜 Fıstıklar")
+                                }
+                                Button(action: {
+                                    self.redTeamEmoji = "🌼"
+                                    self.redTeamName = "Çiçekler"
+                                }) {
+                                    Text("🌼 Çiçekler")
+                                }
+                                Button(action: {
+                                    self.redTeamEmoji = "🐈"
+                                    self.redTeamName = "Kedi Kuyruğu"
+                                }) {
+                                    Text("🐈 Kedi Kuyruğu")
+                                }
+                            }
+
                             Text("\(self.Game.teamRed)")
                                 .foregroundColor(Color("MineShaft"))
                                 //      .font(Font.system(size: self.isIpad ? 64 : 32, design: .monospaced))
@@ -166,34 +168,39 @@ struct ContentView: View {
 
                         }.padding(.all)
                         VStack(spacing: 1) {
-                            Text(self.blueTeamEmoji)
-                                .font(Font.system(size: 48))
-                                .transition(AnyTransition.asymmetric(insertion: .scale, removal: .scale).combined(with: .opacity))
-                                .frame(maxWidth: 64, maxHeight: 64, alignment: .center)
-                                .padding(5)
-                                .contextMenu {
-                                    Button(action: {
-                                        self.blueTeamEmoji = "🚀"
-                                    }) {
-                                        Text("🚀 Roket Takımı")
-                                    }
-                                    Button(action: {
-                                        self.blueTeamEmoji = "🍅"
-                                    }) {
-                                        Text("🍅 Domats")
-                                    }
-                                    Button(action: {
-                                        self.blueTeamEmoji = "☠️"
-                                    }) {
-                                        Text("☠️ Killers")
-                                    }
+                            VStack {
+                                Text(self.blueTeamEmoji)
+                                    .font(Font.system(size: 48))
+                                    .transition(AnyTransition.asymmetric(insertion: .scale, removal: .scale).combined(with: .opacity))
+                                    .frame(maxWidth: 64, maxHeight: 64, alignment: .center)
+                            }
 
-                                    Button(action: {
-                                        self.blueTeamEmoji = "🦮"
-                                    }) {
-                                        Text("🦮 Köpek Burnu")
-                                    }
+                            .contextMenu {
+                                Button(action: {
+                                    self.blueTeamEmoji = "🚀"
+                                    self.blueTeamName = "Roket Takımı"
+                                }) {
+                                    Text("🚀 Roket Takımı")
                                 }
+                                Button(action: {
+                                    self.blueTeamEmoji = "🐛"
+                                    self.blueTeamName = "Böcekler"
+                                }) {
+                                    Text("🐛 Böcekler")
+                                }
+                                Button(action: {
+                                    self.blueTeamEmoji = "☠️"
+                                    self.blueTeamName = "Killers"
+                                }) {
+                                    Text("☠️ Killers")
+                                }
+                                Button(action: {
+                                    self.blueTeamEmoji = "🦮"
+                                    self.blueTeamName = "Köpek Burnu"
+                                }) {
+                                    Text("🦮 Köpek Burnu")
+                                }
+                            }
                             Text("\(self.Game.teamBlue)")
                                 .foregroundColor(Color("MineShaft"))
                                 //      .font(Font.system(size: self.isIpad ? 64 : 32, design: .monospaced))
@@ -206,9 +213,9 @@ struct ContentView: View {
                     Button(action: {
                         let level = UserDefaults.standard.optionalInt(forKey: "level") ?? 1
                         self.reloadToken = UUID()
-                        self.fetcher.words = self.fetcher.words.filter{ $0.level == level }.shuffled()
+                        self.fetcher.words = self.fetcher.words.filter { $0.level == level }.shuffled()
                         self.Game.timeRemaining = self.Game.fulltime
-                        self.Game.round =  UserDefaults.standard.optionalInt(forKey: "round") ?? 5
+                        self.Game.round = UserDefaults.standard.optionalInt(forKey: "round") ?? 5
                         self.Game.teamBlue = 0
                         self.Game.teamRed = 0
                         self.TheSoundManager.newGame()
@@ -218,7 +225,7 @@ struct ContentView: View {
                     }) {
                         VStack {
                             if self.Game.teamRed > self.Game.teamBlue {
-                                Text("Kazanan \(self.redTeamEmoji)")
+                                Text("Tebrikler! \(self.redTeamEmoji) \(self.redTeamName)")
                                     .foregroundColor(.black)
                                     .font(.custom("Kalam Bold", size: self.isIpad ? 96 : 32))
                             } else if self.Game.teamRed == self.Game.teamBlue {
@@ -226,7 +233,7 @@ struct ContentView: View {
                                     .foregroundColor(.black)
                                     .font(.custom("Kalam Bold", size: self.isIpad ? 96 : 32))
                             } else {
-                                Text("Kazanan \(self.blueTeamEmoji)")
+                                Text("Tebrikler!  \(self.blueTeamEmoji) \(self.blueTeamName)")
                                     .foregroundColor(.black)
                                     .font(.custom("Kalam Bold", size: self.isIpad ? 96 : 32))
                             }
@@ -292,13 +299,12 @@ struct ContentView: View {
                     Button(action: {
                         self.Game.timeRemaining = self.Game.fulltime
                         let level = UserDefaults.standard.optionalInt(forKey: "level") ?? 1
-                        
+                        self.fetcher.words = self.fetcher.words.filter { $0.level == level }.shuffled()
                         DispatchQueue.main.asyncAfter(deadline: .now()) {
                             withAnimation(.interpolatingSpring(mass: 1.0,
                                                                stiffness: 100.0,
                                                                damping: 10,
                                                                initialVelocity: 0)) {
-                                                                self.fetcher.words = self.fetcher.words.filter{ $0.level == level }.shuffled()
                                 self.Game.isActive = true
                                 self.TheSoundManager.nextRound()
                                 if self.Game.currentTeam == "red" {
@@ -312,20 +318,20 @@ struct ContentView: View {
                         if self.Game.ended == false && self.Game.round > 0 {
                             if self.Game.currentTeam == "red" {
                                 VStack {
-                                    Text("\(self.blueTeamEmoji)")
+                                    Text(" \(self.blueTeamEmoji) \(self.blueTeamName)")
                                         .foregroundColor(Color("MineShaft"))
                                         .font(.custom("Kalam Bold", size: self.isIpad ? 32 : 28))
-                                    Text("Başlamak için dokun")
+                                    Text("oynuyor. Başlamak için dokun")
                                         .foregroundColor(Color("MineShaft"))
                                         .font(.custom("Kalam Bold", size: self.isIpad ? 22 : 12))
                                 }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
 
                             } else if self.Game.currentTeam == "blue" {
                                 VStack {
-                                    Text("\(self.redTeamEmoji)")
+                                    Text("\(self.redTeamEmoji) \(self.redTeamName)")
                                         .foregroundColor(Color("MineShaft"))
                                         .font(.custom("Kalam Bold", size: self.isIpad ? 22 : 28))
-                                    Text("Başlamak için dokun")
+                                    Text("oynuyor. Başlamak için dokun")
                                         .foregroundColor(Color("MineShaft"))
                                         .font(.custom("Kalam Bold", size: self.isIpad ? 22 : 12))
                                 }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
@@ -380,11 +386,11 @@ struct ContentView: View {
             .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
                 self.Game.isActive = true
             }
-            .onAppear {
-            }
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
         }
         .onAppear {
+            StoreReviewHelper.incrementAppOpenedCount()
+            StoreReviewHelper.checkAndAskForReview()
             reachability.whenReachable = { reachability in
                 if reachability.connection == .wifi {
                     self.fetcher.getPremiumWords()
@@ -404,6 +410,8 @@ struct ContentView: View {
             self.refresh()
         }) {
             Settings()
+               
+                
         }
     }
 }

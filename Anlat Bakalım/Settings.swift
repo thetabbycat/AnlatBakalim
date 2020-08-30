@@ -6,7 +6,6 @@
 //  Copyright © 2020 Steven J. Selcuk. All rights reserved.
 //
 
-import Purchases
 import SwiftUI
 struct TimeItem: Identifiable {
     let id: Int
@@ -48,9 +47,10 @@ struct Settings: View {
         LevelItem(id: 2, name: "Zor", level: 2),
     ]
 
-    init() {
-    }
+    init(){
 
+    }
+    
     var body: some View {
         NavigationView {
             Form {
@@ -89,22 +89,58 @@ struct Settings: View {
                     })
                     
                 }
+                
+                Section(header: Text("Yorum yap")) {
+                    HStack {
+                        Text("Anlat Bakalım hakkında neler düşünüyorsun?")
+                        Spacer()
+                        Image(systemName: "pencil.and.ellipsis.rectangle")
+                    }.onTapGesture {
+                        self.requestReviewManually()
+                    }
+                }
+                
+                
 
                 Section(header: Text("Hakkında")) {
                     HStack {
-                        Text("Created with ❤️ by").font(.system(size: 14))
+                        Text("Bizi takip et @tabbycatllc").font(.system(size: 14))
                         Spacer()
-                        Text("©Tabby Cat, LLC").font(.system(size: 14))
-                            .onTapGesture(count: 2) {
-                                self.showingEasterEgg = true
+                        Text("© Tabby Cat, LLC").font(.system(size: 14))
+                    }
+                    .onTapGesture {
+                        self.showingEasterEgg = true
+                        let screenName =  "tabbycatllc"
+                        let appURL = URL(string: "twitter://user?screen_name=\(screenName)")!
+                        let webURL = URL(string: "https://twitter.com/\(screenName)")!
+                        
+                        if UIApplication.shared.canOpenURL(appURL as URL) {
+                            if #available(iOS 10.0, *) {
+                                UIApplication.shared.open(appURL)
+                            } else {
+                                UIApplication.shared.openURL(appURL)
                             }
+                        } else {
+                            if #available(iOS 10.0, *) {
+                                UIApplication.shared.open(webURL)
+                            } else {
+                                UIApplication.shared.openURL(webURL)
+                            }
+                        }
                     }
                 }
+              
             }
             .navigationBarTitle("Ayarlar")
+            
         }
-
         .navigationViewStyle(StackNavigationViewStyle())
         .edgesIgnoringSafeArea(.all)
+    }
+    
+    func requestReviewManually() {
+        guard let writeReviewURL = URL(string: "https://apps.apple.com/app/idXXXXXXXXXX?action=write-review")
+        else { fatalError("Expected a valid URL") }
+        UIApplication.shared.open(writeReviewURL, options: [:], completionHandler: nil)
     }
 }

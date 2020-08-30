@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AE7FE07602712794CCDB634D7DFA4ADF"
-               BuildableName = "SwiftUICardStack.framework"
-               BlueprintName = "SwiftUICardStack"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "0A3C7013246567200088904A"
+               BuildableName = "Anlat Bakal&#x131;m.app"
+               BlueprintName = "Anlat Bakal&#x131;m"
+               ReferencedContainer = "container:Anlat Bakal&#x131;m.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -40,6 +40,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "0A3C7013246567200088904A"
+            BuildableName = "Anlat Bakal&#x131;m.app"
+            BlueprintName = "Anlat Bakal&#x131;m"
+            ReferencedContainer = "container:Anlat Bakal&#x131;m.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -47,6 +57,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "0A3C7013246567200088904A"
+            BuildableName = "Anlat Bakal&#x131;m.app"
+            BlueprintName = "Anlat Bakal&#x131;m"
+            ReferencedContainer = "container:Anlat Bakal&#x131;m.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -1,4 +1,4 @@
-framework module SwiftUICardStack {
+framework module CardStack {
   umbrella header "SwiftUICardStack-umbrella.h"
 
   export *

@@ -1,9 +1,9 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire" "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire-SwiftyJSON" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftUICardStack" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON" "${PODS_CONFIGURATION_BUILD_DIR}/Sync"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire" "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire-SwiftyJSON" "${PODS_CONFIGURATION_BUILD_DIR}/Purchases" "${PODS_CONFIGURATION_BUILD_DIR}/PurchasesCoreSwift" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftUICardStack" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON" "${PODS_CONFIGURATION_BUILD_DIR}/Sync"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire-SwiftyJSON/Alamofire_SwiftyJSON.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftUICardStack/SwiftUICardStack.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON/SwiftyJSON.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Sync/Sync.framework/Headers"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire-SwiftyJSON/Alamofire_SwiftyJSON.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Purchases/Purchases.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/PurchasesCoreSwift/PurchasesCoreSwift.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftUICardStack/CardStack.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON/SwiftyJSON.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Sync/Sync.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_LDFLAGS = $(inherited) -framework "Alamofire" -framework "Alamofire_SwiftyJSON" -framework "CoreData" -framework "Foundation" -framework "SwiftUICardStack" -framework "SwiftyJSON" -framework "Sync"
+OTHER_LDFLAGS = $(inherited) -framework "Alamofire" -framework "Alamofire_SwiftyJSON" -framework "CardStack" -framework "CoreData" -framework "Foundation" -framework "Purchases" -framework "PurchasesCoreSwift" -framework "StoreKit" -framework "SwiftyJSON" -framework "Sync"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

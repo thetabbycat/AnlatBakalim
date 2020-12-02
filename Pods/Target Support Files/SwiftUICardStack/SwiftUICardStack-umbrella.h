@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double SwiftUICardStackVersionNumber;
-FOUNDATION_EXPORT const unsigned char SwiftUICardStackVersionString[];
+FOUNDATION_EXPORT double CardStackVersionNumber;
+FOUNDATION_EXPORT const unsigned char CardStackVersionString[];
 

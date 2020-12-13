@@ -119,7 +119,6 @@ class Fetcher: ObservableObject {
     }
     
     func getVersion() {
-        
         guard self.needVersionUpdated else {
             self.checkVersion { result in
                 switch result {
@@ -134,7 +133,6 @@ class Fetcher: ObservableObject {
             }
              return
         }
-
     }
 }
 

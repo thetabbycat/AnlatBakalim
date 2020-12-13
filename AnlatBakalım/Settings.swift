@@ -27,21 +27,10 @@ struct Settings: View {
     @State var roundTime = UserDefaults.standard.integer(forKey: "time")
     @State var roundCount = UserDefaults.standard.optionalInt(forKey: "round") ?? 5
     
-    var subscriptionManager = SubscriptionManager()
+    // var subscriptionManager = SubscriptionManager()
+    @ObservedObject var subscriptionManager = SubscriptionManager()
     
-    
-    private var sub: Purchases.Package? {
-        subscriptionManager.monthlySubscription
-    }
-    
-    private var yearlySub: Purchases.Package? {
-        subscriptionManager.yearlySubscription
-    }
-    
-    private var lifetime: Purchases.Package? {
-        subscriptionManager.lifetime
-    }
-    
+  
     
 
     @ObservedObject var Game = GameManager()
@@ -73,6 +62,16 @@ struct Settings: View {
     var body: some View {
         NavigationView {
             Form {
+                
+                Section(header: Text("Daha fazla kelime?")) {
+                    HStack {
+                        Text("Daha fazla kelime ister misin?")
+                        Spacer()
+                        Text("+1000 yeni kelime ekle")
+                    }.onTapGesture {
+                        self.buttonAction(purchase: subscriptionManager.lifetime!)
+                    }
+                }
                 Section(header: Text("Oyun Ayarları")) {
                     Picker(selection: $levelSelection, label: Text("Zorluk seviyesi")) {
                         ForEach(levels) { lev in
@@ -111,10 +110,6 @@ struct Settings: View {
                 
                 Section(header: Text("Yorum yap")) {
                     
-                    Button("Buy", action: {self.buttonAction(purchase: lifetime!)})
-                
-                
-                
                     HStack {
                         Text("Anlat Bakalım hakkında neler düşünüyorsun?")
                         Spacer()

@@ -385,10 +385,10 @@ struct ContentView: View {
         .onAppear {
             StoreReviewHelper.incrementAppOpenedCount()
             StoreReviewHelper.checkAndAskForReview()
+
             reachability.whenReachable = { reachability in
                 if reachability.connection == .wifi {
                     self.fetcher.getPremiumWords()
-
                 } else {
                     self.fetcher.getPremiumWords()
                 }

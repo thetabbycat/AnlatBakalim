@@ -19,7 +19,7 @@ class GameManager: ObservableObject {
     @Published var ended = false
     @Published var teamBlue = 0
     @Published var teamRed = 0
-    @Published var currentTeam = "red"
+    @Published var currentTeam = "blue"
     
     
     // MARK: - Active Variables

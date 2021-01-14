@@ -25,10 +25,27 @@ struct ForbiddenWordItem: View {
 struct SingleWordItem: View {
     var item: Word
     var isIpad: Bool
+    var swipeCount: Int
+    var count: Int
     let direction: LeftRight?
 
     var body: some View {
         GeometryReader { _ in
+            if swipeCount == count {
+                VStack {
+                    Text("Daha fazla kelime")
+                        .lineLimit(2)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.black)
+                        .font(.custom("Kalam Bold", size: self.isIpad ? 48 : 32))
+                        .padding(.all, 30)
+                        .fixedSize(horizontal: false, vertical: true)
+                    
+                    Text("Satın almak için dokun")
+                }
+                
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+            } else {
                 VStack {
                     Text("\(self.item.word ?? "...")")
                         .lineLimit(2)
@@ -37,7 +54,7 @@ struct SingleWordItem: View {
                         .font(.custom("Kalam Bold", size: self.isIpad ? 48 : 32))
                         .padding(.all, 30)
                         .fixedSize(horizontal: false, vertical: true)
-
+                    
                     VStack(alignment: .leading) {
                         if self.item.forbiddenWords?.isEmpty == false {
                             ForEach((NSKeyedUnarchiver.unarchiveObject(with: self.item.forbiddenWords!) as? [String])?.shuffled().prefix(5) ?? ["Yasaklı Kelime"], id: \.self) {
@@ -48,14 +65,16 @@ struct SingleWordItem: View {
                 }
                 
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+            }
+            
         }
         .background(
             Image("CardBGImage")
                 .resizable()
                 .frame(maxWidth: .infinity, maxHeight: .infinity))
         //   .opacity(direction == .right ? 0 : 1)
-        .cornerRadius(6)
-        .drawingGroup()
+      //  .cornerRadius(6)
+       // .drawingGroup()
         .shadow(color: Color("Ebony").opacity(0.6), radius: 20, x: 0, y: 20)
         //     .animation(.linear)
     }

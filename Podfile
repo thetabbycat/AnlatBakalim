@@ -11,4 +11,6 @@ target 'Anlat Bakalım' do
   pod 'Alamofire-SwiftyJSON'
   pod "SwiftUICardStack"
   pod 'Purchases'
+  pod 'SwiftConfettiView'
+  pod 'ExytePopupView'
 end

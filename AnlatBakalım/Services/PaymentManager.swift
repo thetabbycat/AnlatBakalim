@@ -19,6 +19,8 @@ public class SubscriptionManager: ObservableObject {
     @Published public var inPaymentProgress = false
     @Published public var subscriptionStatus: Bool = UserDefaults.standard.optionalBool(forKey: "isSubscribed") ?? false
     
+    var fetcher = Fetcher()
+    
     init() {
         Purchases.configure(withAPIKey: "KxxHEZtDNXaVVeFoTFutGgKEcFhiNQlx")
         Purchases.shared.offerings { (offerings, error) in
@@ -56,9 +58,13 @@ public class SubscriptionManager: ObservableObject {
         if info?.entitlements.all["Daha fazla kelime"]?.isActive == true {
             subscriptionStatus = true
             settings.set(true, forKey: "isSubscribed")
+            fetcher.getPremiumWords()
+            fetcher.words = fetcher.words
         } else {
             settings.set(false, forKey: "isSubscribed")
             subscriptionStatus = false
+            fetcher.getFreeWords()
+            fetcher.words = fetcher.words
         }
         inPaymentProgress = false
     }

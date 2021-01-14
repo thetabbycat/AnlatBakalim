@@ -27,6 +27,7 @@ class Fetcher: ObservableObject {
     init() {
         self.dataStack = DataStack(modelName: "AnlatBakalim")
         self.words = fetchLocalUsers().shuffled()
+       
     }
     
    func fetchLocalUsers() -> [Word] {

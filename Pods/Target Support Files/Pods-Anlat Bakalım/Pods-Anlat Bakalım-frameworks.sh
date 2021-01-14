@@ -163,8 +163,10 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire-SwiftyJSON/Alamofire_SwiftyJSON.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ExytePopupView/ExytePopupView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Purchases/Purchases.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PurchasesCoreSwift/PurchasesCoreSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftConfettiView/SwiftConfettiView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftUICardStack/CardStack.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Sync/Sync.framework"
@@ -172,8 +174,10 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire-SwiftyJSON/Alamofire_SwiftyJSON.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ExytePopupView/ExytePopupView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Purchases/Purchases.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PurchasesCoreSwift/PurchasesCoreSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftConfettiView/SwiftConfettiView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftUICardStack/CardStack.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Sync/Sync.framework"

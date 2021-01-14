@@ -3,9 +3,11 @@ PODS:
   - Alamofire-SwiftyJSON (3.0.0):
     - Alamofire (~> 4.5)
     - SwiftyJSON (~> 4.0.0)
+  - ExytePopupView (0.0.10)
   - Purchases (3.7.5):
     - PurchasesCoreSwift (= 3.7.5)
   - PurchasesCoreSwift (3.7.5)
+  - SwiftConfettiView (0.1.0)
   - SwiftUICardStack (0.0.5)
   - SwiftyJSON (4.0.0)
   - Sync (6.5.0)
@@ -13,7 +15,9 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - Alamofire-SwiftyJSON
+  - ExytePopupView
   - Purchases
+  - SwiftConfettiView
   - SwiftUICardStack
   - SwiftyJSON
   - Sync (~> 6)
@@ -22,8 +26,10 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Alamofire-SwiftyJSON
+    - ExytePopupView
     - Purchases
     - PurchasesCoreSwift
+    - SwiftConfettiView
     - SwiftUICardStack
     - SwiftyJSON
     - Sync
@@ -31,12 +37,14 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Alamofire-SwiftyJSON: 2b3649d57dc7bb2880fb8b86f8bb969397666916
+  ExytePopupView: 14a98f924a7201bc5492e2a961da11045b17eca8
   Purchases: 7ebce9418bc16732c3c3bb4b6ff7e7e397de024e
   PurchasesCoreSwift: 50636e307c1ab76c7a7894a87d042665f2fe0be9
+  SwiftConfettiView: 1bdbc2e6913b6b1c76d8070802b212508ad5c352
   SwiftUICardStack: 61238438719132abd9190208728b447bff3d1333
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   Sync: 86bb8aa0ea2f955ea5ac97b7b73129f86591c39e
 
-PODFILE CHECKSUM: 0536ed3b2a1c87539c1b9b02a242574ace3e9749
+PODFILE CHECKSUM: a5b247e56571edaf55f34a24c301796faea17530
 
 COCOAPODS: 1.8.4

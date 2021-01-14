@@ -6,8 +6,8 @@
 //  Copyright © 2020 Steven J. Selcuk. All rights reserved.
 //
 
-import SwiftUI
 import Purchases
+import SwiftUI
 
 struct TimeItem: Identifiable {
     let id: Int
@@ -26,12 +26,9 @@ struct Settings: View {
     @State var levelSelection = UserDefaults.standard.optionalInt(forKey: "levelSelection") ?? 0
     @State var roundTime = UserDefaults.standard.integer(forKey: "time")
     @State var roundCount = UserDefaults.standard.optionalInt(forKey: "round") ?? 5
-    
+
     // var subscriptionManager = SubscriptionManager()
     @ObservedObject var subscriptionManager = SubscriptionManager()
-    
-  
-    
 
     @ObservedObject var Game = GameManager()
 
@@ -51,18 +48,16 @@ struct Settings: View {
 
     var levels = [
         LevelItem(id: 0, name: "Basit", level: 1),
-       LevelItem(id: 1, name: "Orta Zorluk", level: 1),
+        LevelItem(id: 1, name: "Orta Zorluk", level: 1),
         LevelItem(id: 2, name: "Zor", level: 2),
     ]
 
-    init(){
-
+    init() {
     }
-    
+
     var body: some View {
         NavigationView {
             Form {
-                
                 Section(header: Text("Daha fazla kelime?")) {
                     HStack {
                         Text("Daha fazla kelime ister misin?")
@@ -79,8 +74,8 @@ struct Settings: View {
                         }
                     }
                     .onReceive([self.levelSelection].publisher.first()) { value in
-                      settings.set(value, forKey: "levelSelection")
-                      settings.set(self.levels[value].level, forKey: "level")
+                        settings.set(value, forKey: "levelSelection")
+                        settings.set(self.levels[value].level, forKey: "level")
                     }
 
                     Picker(selection: $roundTimeSelection, label: Text("Tur Süresi")) {
@@ -94,22 +89,20 @@ struct Settings: View {
                     }
 
                     Stepper("Tur Sayısı: \(self.Game.round)", onIncrement: {
-                        if (self.Game.round < 10) {
+                        if self.Game.round < 10 {
                             self.Game.round += 1
                         }
                         settings.set(self.Game.round, forKey: "round")
 
                     }, onDecrement: {
-                        if (self.Game.round > 1) {
+                        if self.Game.round > 1 {
                             self.Game.round -= 1
                         }
                         settings.set(self.Game.round, forKey: "round")
                     })
-                    
                 }
-                
+/**
                 Section(header: Text("Yorum yap")) {
-                    
                     HStack {
                         Text("Anlat Bakalım hakkında neler düşünüyorsun?")
                         Spacer()
@@ -118,9 +111,7 @@ struct Settings: View {
                         self.requestReviewManually()
                     }
                 }
-                
-                
-
+                 */
                 Section(header: Text("Hakkında")) {
                     HStack {
                         Text("Bizi takip et @tabbycatllc").font(.system(size: 14))
@@ -129,10 +120,10 @@ struct Settings: View {
                     }
                     .onTapGesture {
                         self.showingEasterEgg = true
-                        let screenName =  "tabbycatllc"
+                        let screenName = "tabbycatllc"
                         let appURL = URL(string: "twitter://user?screen_name=\(screenName)")!
                         let webURL = URL(string: "https://twitter.com/\(screenName)")!
-                        
+
                         if UIApplication.shared.canOpenURL(appURL as URL) {
                             if #available(iOS 10.0, *) {
                                 UIApplication.shared.open(appURL)
@@ -148,21 +139,18 @@ struct Settings: View {
                         }
                     }
                 }
-              
             }
             .navigationBarTitle("Ayarlar")
-            
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .edgesIgnoringSafeArea(.all)
     }
-    
+
     func buttonAction(purchase: Purchases.Package) {
         subscriptionManager.purchase(source: "Settings",
                                      product: purchase)
     }
-    
-    
+
     func requestReviewManually() {
         guard let writeReviewURL = URL(string: "https://apps.apple.com/app/idXXXXXXXXXX?action=write-review")
         else { fatalError("Expected a valid URL") }

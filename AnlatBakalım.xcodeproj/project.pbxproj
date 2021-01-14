@@ -3,13 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0A002E01249E595400DC6103 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A002E00249E595400DC6103 /* Game.swift */; };
 		0A002E03249E938B00DC6103 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A002E02249E938B00DC6103 /* Button.swift */; };
-		0A2035572577E36C00E2CE26 /* Pods_Anlat_Bakalım.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A2035562577E36C00E2CE26 /* Pods_Anlat_Bakalım.framework */; };
 		0A3716682468576800D6A0F9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3716672468576800D6A0F9 /* Settings.swift */; };
 		0A37166A24686C0900D6A0F9 /* CheckInternetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A37166924686C0900D6A0F9 /* CheckInternetConnection.swift */; };
 		0A3C7018246567200088904A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C7017246567200088904A /* AppDelegate.swift */; };
@@ -31,6 +30,7 @@
 		0A9000802495414A0091733D /* Kalam-Bold.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0A90007C249541190091733D /* Kalam-Bold.ttf */; };
 		0A9000812495414A0091733D /* Kalam-Light.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0A90007B249541190091733D /* Kalam-Light.ttf */; };
 		0A9000822495414A0091733D /* Kalam-Regular.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0A90007A249541190091733D /* Kalam-Regular.ttf */; };
+		0A90297E25A0D81A001D99E6 /* ConfettiView in Frameworks */ = {isa = PBXBuildFile; productRef = 0A90297D25A0D81A001D99E6 /* ConfettiView */; };
 		0A950105249FA4C00049477E /* GoodButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A950104249FA4C00049477E /* GoodButton.swift */; };
 		0A9B8F6D24A88DD000CA3BEA /* monogram_extended.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A9B8F6C24A88DD000CA3BEA /* monogram_extended.ttf */; };
 		0A9B8F6E24A88E3900CA3BEA /* monogram_extended.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0A9B8F6C24A88DD000CA3BEA /* monogram_extended.ttf */; };
@@ -67,7 +67,6 @@
 /* Begin PBXFileReference section */
 		0A002E00249E595400DC6103 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		0A002E02249E938B00DC6103 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
-		0A2035562577E36C00E2CE26 /* Pods_Anlat_Bakalım.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = "Pods_Anlat_Bakalım.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A3716672468576800D6A0F9 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		0A37166924686C0900D6A0F9 /* CheckInternetConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternetConnection.swift; sourceTree = "<group>"; };
 		0A3C7014246567200088904A /* Anlat Bakalım.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Anlat Bakalım.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,7 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A2035572577E36C00E2CE26 /* Pods_Anlat_Bakalım.framework in Frameworks */,
+				0A90297E25A0D81A001D99E6 /* ConfettiView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,7 +221,6 @@
 		ED7C92E0B36BF703DC0D6CE4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0A2035562577E36C00E2CE26 /* Pods_Anlat_Bakalım.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -246,6 +244,9 @@
 			dependencies = (
 			);
 			name = "Anlat Bakalım";
+			packageProductDependencies = (
+				0A90297D25A0D81A001D99E6 /* ConfettiView */,
+			);
 			productName = AnlatBakalim;
 			productReference = 0A3C7014246567200088904A /* Anlat Bakalım.app */;
 			productType = "com.apple.product-type.application";
@@ -274,6 +275,9 @@
 				Base,
 			);
 			mainGroup = 0A3C700B2465671F0088904A;
+			packageReferences = (
+				0A90297C25A0D81A001D99E6 /* XCRemoteSwiftPackageReference "ConfettiView" */,
+			);
 			productRefGroup = 0A3C7015246567200088904A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -575,6 +579,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0A90297C25A0D81A001D99E6 /* XCRemoteSwiftPackageReference "ConfettiView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ziligy/ConfettiView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0A90297D25A0D81A001D99E6 /* ConfettiView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A90297C25A0D81A001D99E6 /* XCRemoteSwiftPackageReference "ConfettiView" */;
+			productName = ConfettiView;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		0A3C701B246567200088904A /* AnlatBakalim.xcdatamodeld */ = {

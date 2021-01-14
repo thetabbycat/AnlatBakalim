@@ -23,3 +23,12 @@ struct GoodButtonStyle: ButtonStyle {
             .scaleEffect(configuration.isPressed ? 0.93 : 1.0)
     }
 }
+
+struct NoBGButtonStyle: ButtonStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .foregroundColor(.white)
+            .padding(45)
+            .scaleEffect(configuration.isPressed ? 1.1 : 1)
+    }
+}

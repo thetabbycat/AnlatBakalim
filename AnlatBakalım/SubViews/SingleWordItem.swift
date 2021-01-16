@@ -28,10 +28,12 @@ struct SingleWordItem: View {
     var swipeCount: Int
     var count: Int
     let direction: LeftRight?
+    
+    var isPremium = UserDefaults.standard.optionalBool(forKey: "isSubscribed") ?? false
 
     var body: some View {
         GeometryReader { _ in
-            if swipeCount == count {
+            if swipeCount == count && isPremium == false {
                 VStack {
                     Text("Daha fazla kelime")
                         .lineLimit(2)
@@ -45,9 +47,11 @@ struct SingleWordItem: View {
                 }
                 
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+                
+                
             } else {
                 VStack {
-                    Text("\(self.item.word ?? "...")")
+                    Text("\(self.item.word ?? "Bir hata oluştu.")")
                         .lineLimit(2)
                         .multilineTextAlignment(.center)
                         .foregroundColor(.black)
@@ -61,9 +65,8 @@ struct SingleWordItem: View {
                                 ForbiddenWordItem(forb: "\($0)", isIpad: self.isIpad)
                             }
                         }
-                    }
+                    }.animation(nil)
                 }
-                
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
             }
             

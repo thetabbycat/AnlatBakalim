@@ -19,7 +19,10 @@ public class SubscriptionManager: ObservableObject {
     @Published public var inPaymentProgress = false
     @Published public var subscriptionStatus: Bool = UserDefaults.standard.optionalBool(forKey: "isSubscribed") ?? false
     
-    var fetcher = Fetcher()
+    @ObservedObject var fetcher = Fetcher()
+    @ObservedObject var Game = GameManager()
+    
+    let level = UserDefaults.standard.optionalInt(forKey: "level") ?? 1
     
     init() {
         Purchases.configure(withAPIKey: "KxxHEZtDNXaVVeFoTFutGgKEcFhiNQlx")
@@ -34,8 +37,6 @@ public class SubscriptionManager: ObservableObject {
     public func purchase(source: String, product: Purchases.Package) {
         guard !inPaymentProgress else { return }
         inPaymentProgress = true
-        Purchases.shared.setAttributes(["source": source,
-                                        "number_of_launch": "\(UserDefaults.standard.optionalInt(forKey: "numberOfLaunch") ?? 0)"])
         Purchases.shared.purchasePackage(product) { (_, info, _, _) in
             self.processInfo(info: info)
         }
@@ -54,17 +55,25 @@ public class SubscriptionManager: ObservableObject {
         }
     }
     
+    public func buttonAction(purchase: Purchases.Package) {
+        self.purchase(source: "Settings",
+                                     product: purchase)
+    }
+    
     private func processInfo(info: Purchases.PurchaserInfo?) {
         if info?.entitlements.all["Daha fazla kelime"]?.isActive == true {
             subscriptionStatus = true
             settings.set(true, forKey: "isSubscribed")
             fetcher.getPremiumWords()
-            fetcher.words = fetcher.words
+            fetcher.words = self.fetcher.fetchLocalUsers().filter { $0.level == level }.shuffled()
+            print("sold")
+            
         } else {
             settings.set(false, forKey: "isSubscribed")
             subscriptionStatus = false
             fetcher.getFreeWords()
-            fetcher.words = fetcher.words
+            fetcher.words = self.fetcher.fetchLocalUsers().filter { $0.level == level }
+            print("not sold")
         }
         inPaymentProgress = false
     }

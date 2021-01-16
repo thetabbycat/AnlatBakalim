@@ -13,8 +13,6 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let nofl = UserDefaults.standard.optionalInt(forKey: "numberOfLaunch") ?? 0
-        settings.set(nofl + 1, forKey: "numberOfLaunch")
         return true
     }
 

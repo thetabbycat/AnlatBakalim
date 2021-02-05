@@ -1,5 +1,5 @@
 
-import Purchases
+import StoreKit
 import SwiftUI
 import UIKit
 
@@ -11,7 +11,6 @@ struct ContentView: View {
     @ObservedObject var fetcher = Fetcher()
     @ObservedObject var Game = GameManager()
     @ObservedObject var TheSoundManager = SoundManager()
-    @ObservedObject var subscriptionManager = SubscriptionManager()
 
     var isIpad = UIDevice.current.model.hasPrefix("iPad")
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -32,12 +31,6 @@ struct ContentView: View {
 
     @State var swipeCounter = 0
 
-    @State var isPremium = UserDefaults.standard.optionalBool(forKey: "isSubscribed") ?? false
-    // var isPremium = false
-
-    @State var changeThis = true
-
-    let randPromo = promotText.randomElement()
     init() {
         /**
          do {
@@ -51,6 +44,8 @@ struct ContentView: View {
          */
 
         UIApplication.shared.isIdleTimerDisabled = true
+
+        fetcher.getFreeWords()
     }
 
     func refresh() {
@@ -65,25 +60,18 @@ struct ContentView: View {
         TheSoundManager.newGame()
     }
 
+    let randPromo = promotText.randomElement()
+
+    let webURL = URL(string: "https://apps.apple.com/us/app/anlat-bakal%C4%B1m/id1526011547")!
+
     var body: some View {
         ZStack {
-            if self.swipeCounter > self.fetcher.words.count - 1 && self.Game.isActive == true && self.subscriptionManager.subscriptionStatus == false {
-                PromotionButton(onTap: {
-                    generator.impactOccurred()
-                    self.subscriptionManager.buttonAction(purchase: subscriptionManager.lifetime!)
-                    Game.ended = false
-                    Game.isActive = false
-                })
-            }
-
-            if self.subscriptionManager.subscriptionStatus == false && self.Game.ended == false && self.Game.round >= 1 {
-                PromotionBanner(onTap: {
-                    generator.impactOccurred()
-                    self.subscriptionManager.buttonAction(purchase: subscriptionManager.lifetime!)
-                    Game.ended = false
-                    Game.isActive = false
-                }, isIpad: self.isIpad, item: self.randPromo!)
-            }
+            PromotionBanner(onTap: {
+                generator.impactOccurred()
+                UIApplication.shared.open(webURL)
+                Game.ended = false
+                Game.isActive = false
+            }, isIpad: self.isIpad, item: self.randPromo!)
 
             SettingsButton(onTap: { generator.impactOccurred()
                 self.isSettingsOpen.toggle()
@@ -100,7 +88,6 @@ struct ContentView: View {
                                blueTeamName: $blueTeamName,
                                teamRed: self.Game.teamRed,
                                teamBlue: self.Game.teamBlue,
-                               isPremium: self.subscriptionManager.subscriptionStatus,
                                isIpad: self.isIpad,
                                round: self.Game.round,
                                timeRemaining: self.Game.timeRemaining
@@ -113,11 +100,9 @@ struct ContentView: View {
                                   blueTeamName: $blueTeamName,
                                   teamRed: self.Game.teamRed,
                                   teamBlue: self.Game.teamBlue,
-                                  isPremium: self.subscriptionManager.subscriptionStatus,
                                   isIpad: self.isIpad,
                                   onPurchase: {
                                       generator.impactOccurred()
-                                      self.subscriptionManager.buttonAction(purchase: subscriptionManager.lifetime!)
                                       Game.ended = false
                                       Game.isActive = false
                                   },
@@ -128,13 +113,16 @@ struct ContentView: View {
                     CardStackView(wordStack: self.fetcher.words, onSwipeAction: { direction in
                         let impactMed = UINotificationFeedbackGenerator()
                         self.swipeCounter += 1
-                        if self.swipeCounter == self.fetcher.words.count - 1 {
-                            if self.subscriptionManager.subscriptionStatus {
-                                self.fetcher.words = self.fetcher.fetchLocalUsers().filter { $0.level == level }.shuffled()
+                        self.fetcher.words = self.fetcher.fetchLocalUsers().filter { $0.level == level }
+                        
+                        if self.swipeCounter == self.fetcher.words.count - 2  {
+                            if #available(iOS 14.0, *) {
+                                self.show()
                             } else {
-                                self.fetcher.words = self.fetcher.fetchLocalUsers().filter { $0.level == level }
+                                // Fallback on earlier versions
                             }
                         }
+                            
 
                         if direction == .left {
                             self.isWrong = true
@@ -219,6 +207,8 @@ struct ContentView: View {
         .onAppear {
             StoreReviewHelper.incrementAppOpenedCount()
             StoreReviewHelper.checkAndAskForReview()
+
+            fetcher.words = fetcher.fetchLocalUsers().filter { $0.level == level }.shuffled()
         }
         .background(
             Image("MainBGImage")
@@ -229,8 +219,23 @@ struct ContentView: View {
         .sheet(isPresented: self.$isSettingsOpen, onDismiss: {
             self.refresh()
         }) {
-            SettingsView(paymentManager: self.subscriptionManager)
+            SettingsView()
         }
+    }
+
+    @available(iOS 14.0, *)
+    public func show() {
+        DispatchQueue.main.async(execute: {
+            let scene = UIApplication.shared
+                .connectedScenes
+                .filter { $0.activationState == .foregroundActive }
+                .first
+
+            let config = SKOverlay.AppConfiguration(appIdentifier: "1526011547", position: .bottomRaised)
+            let overlay = SKOverlay(configuration: config)
+            overlay.present(in: scene as! UIWindowScene)
+
+        })
     }
 
     func gameLogic() {
@@ -238,6 +243,8 @@ struct ContentView: View {
         if Game.timeRemaining > 0 {
             Game.timeRemaining -= 1
         }
+        
+
 
         if Game.round > 0 {
             if Game.timeRemaining <= 1 {

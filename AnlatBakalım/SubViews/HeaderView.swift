@@ -15,7 +15,6 @@ struct HeaderView: View {
     @Binding var blueTeamName: String
     var teamRed: Int
     var teamBlue: Int
-    var isPremium: Bool
     var isIpad: Bool
     var round: Int
     var timeRemaining: Int
@@ -44,32 +43,6 @@ struct HeaderView: View {
                     .transition(AnyTransition.asymmetric(insertion: .move(edge: .bottom), removal: .move(edge: .bottom)).combined(with: .opacity))
                     //   .if(self.Game.currentTeam == "red") { $0.multicolorGlow(rotation: self.Game.teamRed) }
                     .modifier(ShakeEffect(shakes: self.teamRed * 2))
-                   .if(self.isPremium) { $0.contextMenu {
-                        Button(action: {
-                            self.redTeamEmoji = "🥑"
-                            self.redTeamName = "Avokadolar"
-                        }) {
-                            Text("🥑 Avokadolar")
-                        }
-                        Button(action: {
-                            self.redTeamEmoji = "🥜"
-                            self.redTeamName = "Fıstıklar"
-                        }) {
-                            Text("🥜 Fıstıklar")
-                        }
-                        Button(action: {
-                            self.redTeamEmoji = "🌼"
-                            self.redTeamName = "Çiçekler"
-                        }) {
-                            Text("🌼 Çiçekler")
-                        }
-                        Button(action: {
-                            self.redTeamEmoji = "🐈"
-                            self.redTeamName = "Kedi Kuyruğu"
-                        }) {
-                            Text("🐈 Kedi Kuyruğu")
-                        }
-                    } }
 
                 Text("\(self.teamRed)")
                     .foregroundColor(Color("MineShaft"))
@@ -94,34 +67,6 @@ struct HeaderView: View {
                     .frame(maxWidth: 64, maxHeight: 64, alignment: .center)
                     .transition(AnyTransition.asymmetric(insertion: .move(edge: .bottom), removal: .move(edge: .bottom)).combined(with: .opacity))
                     .modifier(ShakeEffect(shakes: self.teamBlue * 2))
-                    //     .if(self.Game.currentTeam == "blue") { $0.multicolorGlow(rotation: self.Game.teamBlue) }
-                    .if(self.isPremium) { $0.contextMenu {
-                        Button(action: {
-                            self.blueTeamEmoji = "🚀"
-                            self.blueTeamName = "Roket Takımı"
-                        }) {
-                            Text("🚀 Roket Takımı")
-                        }
-                        Button(action: {
-                            self.blueTeamEmoji = "🐛"
-                            self.blueTeamName = "Böcekler"
-                        }) {
-                            Text("🐛 Böcekler")
-                        }
-                        Button(action: {
-                            self.blueTeamEmoji = "☠️"
-                            self.blueTeamName = "Killers"
-                        }) {
-                            Text("☠️ Killers")
-                        }
-                        Button(action: {
-                            self.blueTeamEmoji = "🦮"
-                            self.blueTeamName = "Köpek Burnu"
-                        }) {
-                            Text("🦮 Köpek Burnu")
-                        }
-                    }
-                    }
 
                 Text("\(self.teamBlue)")
                     .foregroundColor(Color("MineShaft"))

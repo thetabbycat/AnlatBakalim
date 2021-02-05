@@ -17,7 +17,6 @@ struct GameEndedView: View {
 
     var teamRed: Int
     var teamBlue: Int
-    var isPremium: Bool
     var isIpad: Bool
 
     var onPurchase: () -> Void

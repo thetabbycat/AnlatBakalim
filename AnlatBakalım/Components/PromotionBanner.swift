@@ -16,10 +16,10 @@ struct PromotionItem: Identifiable {
 }
 
 var promotText = [
-    PromotionItem(id: 0, emoji: "🥳", title: "Eğlence devam etsin!", desc: "Hep aynı kelimeler çıkmasın!\n Premium kelime seti ile daha fazlasını oyna. Satın almak için dokun."),
-    PromotionItem(id: 1, emoji: "🎉", title: "Hep aynı kelimeler?", desc: "Buraya dokun ve her hafta güncellenen kelime setini satın al!\nEğlence hiç bitmesin."),
-    PromotionItem(id: 2, emoji: "🔒", title: "Premium Özellikleri aç", desc: "Premium ile sürekli güncellenen kelime setine erişebilir\nve takım emojilerini değiştirebilirsin! "),
-    PromotionItem(id: 3, emoji: "🧐", title: "Premium Özellikleri aç", desc: "Kolay kelimeler sana göre değil mi?\nPremium kelime setinde her zorluk seviyesi için daha fazlası var."),
+    PromotionItem(id: 0, emoji: "🥳", title: "Eğlence devam etsin!", desc: "Hep aynı kelimeler çıkmasın!\n AnlatBakalım Pro ile daha fazlasını oyna. Satın almak için dokun."),
+    PromotionItem(id: 1, emoji: "🎉", title: "Hep aynı kelimeler?", desc: "Buraya dokun ve sürekli güncellenen kelime kart setinine sahip\nAnlatBakalım Pro'yu satın al."),
+    PromotionItem(id: 2, emoji: "🔒", title: "Premium Özellikleri aç", desc: "AnlatBakalım Pro ile sürekli güncellenen kelime setine erişebilir\nve takım emojilerini değiştirebilirsin! "),
+    PromotionItem(id: 3, emoji: "🧐", title: "Premium Özellikleri aç", desc: "Kolay kelimeler sana göre değil mi?\nAnlatBakalım Pro'da her zorluk seviyesi için daha fazlası var."),
 ]
 
 struct PromotionBanner: View {

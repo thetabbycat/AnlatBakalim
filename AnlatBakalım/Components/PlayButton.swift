@@ -20,6 +20,8 @@ struct PlayButton: View {
     var redTeamName: String
     var blueTeamName: String
     
+    
+    
     var body: some View {
         Button(action: {
             self.onTap()
@@ -49,12 +51,18 @@ struct PlayButton: View {
                     }
                 }
                 .padding(25)
-                .background(Color("Ebony"))
+                .background(
+                    Image("ButtonTexture")
+                        .antialiased(true)
+                        .resizable()
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                )
                 .cornerRadius(80)
                 .frame(width: 300, height: 160)
                 .shadow(color: Color("Ebony").opacity(0.6), radius: 20, x: 0, y: 20)
             }
         }
+        
         .transition(AnyTransition.asymmetric(insertion: .move(edge: .bottom), removal: .move(edge: .bottom)).combined(with: .opacity))
         .buttonStyle(NoBGButtonStyle())
         .frame(maxWidth: 600, maxHeight: 200, alignment: .center)

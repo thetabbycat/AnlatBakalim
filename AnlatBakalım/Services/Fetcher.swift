@@ -22,7 +22,7 @@ class Fetcher: ObservableObject {
 
     init() {
         dataStack = DataStack(modelName: "AnlatBakalim")
-        words = fetchLocalUsers().shuffled()
+        self.words = fetchLocalUsers().shuffled()
     }
 
     func fetchLocalUsers() -> [Word] {

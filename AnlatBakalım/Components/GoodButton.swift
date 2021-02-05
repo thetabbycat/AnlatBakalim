@@ -11,7 +11,7 @@ import SwiftUI
 struct GoodButtonStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
-            .foregroundColor(.white)
+            .foregroundColor(Color("ButtonTextColor"))
             .background(
                 
                 Image("ButtonScreen")
@@ -27,8 +27,17 @@ struct GoodButtonStyle: ButtonStyle {
 struct NoBGButtonStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
+            .foregroundColor(Color("Ebony"))
+            .padding(45)
+            .scaleEffect(configuration.isPressed ? 0.94: 1)
+    }
+}
+
+struct NoBGButtonStyleWhite: ButtonStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
             .foregroundColor(.white)
             .padding(45)
-            .scaleEffect(configuration.isPressed ? 1.1 : 1)
+            .scaleEffect(configuration.isPressed ? 0.99: 1)
     }
 }

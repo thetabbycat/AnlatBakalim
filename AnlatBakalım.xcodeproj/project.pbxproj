@@ -51,6 +51,14 @@
 		0AC2219F24A8D43A007E3BE9 /* point3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0AC2219724A8D43A007E3BE9 /* point3.mp3 */; };
 		0AC221A024A8D43A007E3BE9 /* point.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0AC2219824A8D43A007E3BE9 /* point.mp3 */; };
 		0AC221A224A8DA96007E3BE9 /* menu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0AC221A124A8DA96007E3BE9 /* menu.mp3 */; };
+		0AD5859125B48B38002C602C /* Silka Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0AD5858E25B48B37002C602C /* Silka Bold.otf */; };
+		0AD5859225B48B38002C602C /* Silka Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0AD5858F25B48B37002C602C /* Silka Regular.otf */; };
+		0AD5859325B48B38002C602C /* SpaceMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0AD5859025B48B38002C602C /* SpaceMono-Regular.ttf */; };
+		0AD5859525B48B4E002C602C /* Silka Bold.otf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0AD5858E25B48B37002C602C /* Silka Bold.otf */; };
+		0AD5859625B48B4E002C602C /* Silka Regular.otf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0AD5858F25B48B37002C602C /* Silka Regular.otf */; };
+		0AD5859725B48B4E002C602C /* SpaceMono-Regular.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0AD5859025B48B38002C602C /* SpaceMono-Regular.ttf */; };
+		0AD5859A25B48F05002C602C /* PromotionBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD5859925B48F05002C602C /* PromotionBanner.swift */; };
+		0AD5859D25B5C6DC002C602C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AD5859C25B5C6DC002C602C /* StoreKit.framework */; };
 		0AEB25FF2577D3AA008D9FDB /* PaymentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB25FE2577D3AA008D9FDB /* PaymentManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +69,9 @@
 			dstPath = Fonts;
 			dstSubfolderSpec = 7;
 			files = (
+				0AD5859525B48B4E002C602C /* Silka Bold.otf in CopyFiles */,
+				0AD5859625B48B4E002C602C /* Silka Regular.otf in CopyFiles */,
+				0AD5859725B48B4E002C602C /* SpaceMono-Regular.ttf in CopyFiles */,
 				0A9B8F6E24A88E3900CA3BEA /* monogram_extended.ttf in CopyFiles */,
 				0A9000802495414A0091733D /* Kalam-Bold.ttf in CopyFiles */,
 				0A9000812495414A0091733D /* Kalam-Light.ttf in CopyFiles */,
@@ -112,6 +123,11 @@
 		0AC2219724A8D43A007E3BE9 /* point3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = point3.mp3; sourceTree = "<group>"; };
 		0AC2219824A8D43A007E3BE9 /* point.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = point.mp3; sourceTree = "<group>"; };
 		0AC221A124A8DA96007E3BE9 /* menu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = menu.mp3; sourceTree = "<group>"; };
+		0AD5858E25B48B37002C602C /* Silka Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Silka Bold.otf"; sourceTree = "<group>"; };
+		0AD5858F25B48B37002C602C /* Silka Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Silka Regular.otf"; sourceTree = "<group>"; };
+		0AD5859025B48B38002C602C /* SpaceMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceMono-Regular.ttf"; sourceTree = "<group>"; };
+		0AD5859925B48F05002C602C /* PromotionBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionBanner.swift; sourceTree = "<group>"; };
+		0AD5859C25B5C6DC002C602C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		0AEB25FE2577D3AA008D9FDB /* PaymentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentManager.swift; sourceTree = "<group>"; };
 		537A02B74C6BA3AF77AFEE37 /* Pods-Anlat Bakalım.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anlat Bakalım.release.xcconfig"; path = "Target Support Files/Pods-Anlat Bakalım/Pods-Anlat Bakalım.release.xcconfig"; sourceTree = "<group>"; };
 		C5EFAA6772B0E204CE78EC3F /* Pods-Anlat Bakalım.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anlat Bakalım.debug.xcconfig"; path = "Target Support Files/Pods-Anlat Bakalım/Pods-Anlat Bakalım.debug.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A90297E25A0D81A001D99E6 /* ConfettiView in Frameworks */,
+				0AD5859D25B5C6DC002C602C /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +230,9 @@
 				0A90007C249541190091733D /* Kalam-Bold.ttf */,
 				0A90007B249541190091733D /* Kalam-Light.ttf */,
 				0A9B8F6C24A88DD000CA3BEA /* monogram_extended.ttf */,
+				0AD5858E25B48B37002C602C /* Silka Bold.otf */,
+				0AD5858F25B48B37002C602C /* Silka Regular.otf */,
+				0AD5859025B48B38002C602C /* SpaceMono-Regular.ttf */,
 				0A90007A249541190091733D /* Kalam-Regular.ttf */,
 			);
 			path = Fonts;
@@ -239,6 +259,7 @@
 				0AC1B35F25B33DCB00B42C52 /* TrueOrFalseIcons.swift */,
 				0AC1B36225B33E9800B42C52 /* PlayButton.swift */,
 				0AC1B36525B3414200B42C52 /* PromotionButton.swift */,
+				0AD5859925B48F05002C602C /* PromotionBanner.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -255,6 +276,7 @@
 		ED7C92E0B36BF703DC0D6CE4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0AD5859C25B5C6DC002C602C /* StoreKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -328,7 +350,9 @@
 			files = (
 				0AC2219E24A8D43A007E3BE9 /* newGame2.mp3 in Resources */,
 				0A90007D249541190091733D /* Kalam-Regular.ttf in Resources */,
+				0AD5859325B48B38002C602C /* SpaceMono-Regular.ttf in Resources */,
 				0AB4D339248BD67E0084DFB5 /* crumbling.mp3 in Resources */,
+				0AD5859125B48B38002C602C /* Silka Bold.otf in Resources */,
 				0A3C7027246567220088904A /* LaunchScreen.storyboard in Resources */,
 				0A9B8F6D24A88DD000CA3BEA /* monogram_extended.ttf in Resources */,
 				0AC2219F24A8D43A007E3BE9 /* point3.mp3 in Resources */,
@@ -343,6 +367,7 @@
 				0A3C7024246567220088904A /* Preview Assets.xcassets in Resources */,
 				0A90007F249541190091733D /* Kalam-Bold.ttf in Resources */,
 				0A3C7021246567220088904A /* Assets.xcassets in Resources */,
+				0AD5859225B48B38002C602C /* Silka Regular.otf in Resources */,
 				0AC2219A24A8D43A007E3BE9 /* lose.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +425,7 @@
 				0AC1B36325B33E9800B42C52 /* PlayButton.swift in Sources */,
 				0AC1B33E25B3276100B42C52 /* HeaderView.swift in Sources */,
 				0A3C7035246573470088904A /* Fetcher.swift in Sources */,
+				0AD5859A25B48F05002C602C /* PromotionBanner.swift in Sources */,
 				0AB4D33B248BD6920084DFB5 /* SoundEffects.swift in Sources */,
 				0A002E01249E595400DC6103 /* Game.swift in Sources */,
 				0A3C701D246567200088904A /* AnlatBakalim.xcdatamodeld in Sources */,
@@ -557,7 +583,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"AnlatBakalım/Preview Content\"";
 				DEVELOPMENT_TEAM = 9937MYTBBA;
 				ENABLE_PREVIEWS = YES;
@@ -580,7 +606,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"AnlatBakalım/Preview Content\"";
 				DEVELOPMENT_TEAM = 9937MYTBBA;
 				ENABLE_PREVIEWS = YES;

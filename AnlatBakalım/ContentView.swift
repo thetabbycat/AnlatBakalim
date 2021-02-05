@@ -1,7 +1,7 @@
 
+import Purchases
 import SwiftUI
 import UIKit
-import Purchases
 
 let settings = UserDefaults.standard
 let screen = UIScreen.main.bounds
@@ -35,6 +35,9 @@ struct ContentView: View {
     @State var isPremium = UserDefaults.standard.optionalBool(forKey: "isSubscribed") ?? false
     // var isPremium = false
 
+    @State var changeThis = true
+
+    let randPromo = promotText.randomElement()
     init() {
         /**
          do {
@@ -48,7 +51,6 @@ struct ContentView: View {
          */
 
         UIApplication.shared.isIdleTimerDisabled = true
-   
     }
 
     func refresh() {
@@ -56,23 +58,31 @@ struct ContentView: View {
         Game.teamRed = 0
         Game.ended = false
         Game.isActive = false
-        fetcher.words = fetcher.fetchLocalUsers().filter { $0.level == level }.shuffled()
         Game.timeRemaining = UserDefaults.standard.integer(forKey: "time")
         Game.fulltime = UserDefaults.standard.integer(forKey: "time")
         Game.round = UserDefaults.standard.optionalInt(forKey: "round") ?? 5
         Game.currentTeam = "blue"
         TheSoundManager.newGame()
     }
-   
 
     var body: some View {
         ZStack {
-            if self.swipeCounter > self.fetcher.words.count - 1 && self.Game.isActive == true && self.isPremium == false {
+            if self.swipeCounter > self.fetcher.words.count - 1 && self.Game.isActive == true && self.subscriptionManager.subscriptionStatus == false {
                 PromotionButton(onTap: {
                     generator.impactOccurred()
                     self.subscriptionManager.buttonAction(purchase: subscriptionManager.lifetime!)
-                    self.refresh()
+                    Game.ended = false
+                    Game.isActive = false
                 })
+            }
+
+            if self.subscriptionManager.subscriptionStatus == false && self.Game.ended == false && self.Game.round >= 1 {
+                PromotionBanner(onTap: {
+                    generator.impactOccurred()
+                    self.subscriptionManager.buttonAction(purchase: subscriptionManager.lifetime!)
+                    Game.ended = false
+                    Game.isActive = false
+                }, isIpad: self.isIpad, item: self.randPromo!)
             }
 
             SettingsButton(onTap: { generator.impactOccurred()
@@ -90,7 +100,7 @@ struct ContentView: View {
                                blueTeamName: $blueTeamName,
                                teamRed: self.Game.teamRed,
                                teamBlue: self.Game.teamBlue,
-                               isPremium: self.isPremium,
+                               isPremium: self.subscriptionManager.subscriptionStatus,
                                isIpad: self.isIpad,
                                round: self.Game.round,
                                timeRemaining: self.Game.timeRemaining
@@ -103,12 +113,13 @@ struct ContentView: View {
                                   blueTeamName: $blueTeamName,
                                   teamRed: self.Game.teamRed,
                                   teamBlue: self.Game.teamBlue,
-                                  isPremium: self.isPremium,
+                                  isPremium: self.subscriptionManager.subscriptionStatus,
                                   isIpad: self.isIpad,
                                   onPurchase: {
                                       generator.impactOccurred()
                                       self.subscriptionManager.buttonAction(purchase: subscriptionManager.lifetime!)
-                                      self.refresh()
+                                      Game.ended = false
+                                      Game.isActive = false
                                   },
                                   onReStart: { self.refresh() })
                 }
@@ -118,13 +129,13 @@ struct ContentView: View {
                         let impactMed = UINotificationFeedbackGenerator()
                         self.swipeCounter += 1
                         if self.swipeCounter == self.fetcher.words.count - 1 {
-                            if isPremium {
+                            if self.subscriptionManager.subscriptionStatus {
                                 self.fetcher.words = self.fetcher.fetchLocalUsers().filter { $0.level == level }.shuffled()
                             } else {
                                 self.fetcher.words = self.fetcher.fetchLocalUsers().filter { $0.level == level }
                             }
                         }
-                        
+
                         if direction == .left {
                             self.isWrong = true
                             self.isRight = false
@@ -138,9 +149,9 @@ struct ContentView: View {
                             self.isWrong = false
                             self.isRight = true
                             self.TheSoundManager.right()
-                            
+
                             impactMed.notificationOccurred(.success)
-                            
+
                             if self.Game.currentTeam == "red" {
                                 self.Game.teamRed += 1
                             } else {
@@ -159,10 +170,14 @@ struct ContentView: View {
                         generator.impactOccurred()
                         self.Game.timeRemaining = self.Game.fulltime
                         let level = UserDefaults.standard.optionalInt(forKey: "level") ?? 1
-                        if isPremium {
-                            self.fetcher.words = self.fetcher.fetchLocalUsers().filter { $0.level == level }.shuffled()
+
+                        if level == 2 {
+                            self.fetcher.words = self.fetcher.fetchLocalUsers().filter { $0.level == 1 } + self.fetcher.fetchLocalUsers().filter { $0.level == 2 }
+                            self.fetcher.words = self.fetcher.words.shuffled()
+                        } else if level == 3 {
+                            self.fetcher.words = self.fetcher.fetchLocalUsers().filter { $0.level == 2 }.shuffled()
                         } else {
-                            self.fetcher.words = self.fetcher.fetchLocalUsers().filter { $0.level == level }
+                            self.fetcher.words = self.fetcher.fetchLocalUsers().filter { $0.level == 1 }.shuffled()
                         }
                         DispatchQueue.main.asyncAfter(deadline: .now()) {
                             withAnimation(.interpolatingSpring(mass: 1.0,
@@ -210,22 +225,22 @@ struct ContentView: View {
                 .resizable()
                 .frame(maxWidth: .infinity, maxHeight: .infinity))
         .edgesIgnoringSafeArea(.all)
-        
+
         .sheet(isPresented: self.$isSettingsOpen, onDismiss: {
             self.refresh()
         }) {
-            SettingsView()
+            SettingsView(paymentManager: self.subscriptionManager)
         }
     }
-    
+
     func gameLogic() {
-        guard self.Game.isActive else { return }
-        if self.Game.timeRemaining > 0 {
-            self.Game.timeRemaining -= 1
+        guard Game.isActive else { return }
+        if Game.timeRemaining > 0 {
+            Game.timeRemaining -= 1
         }
-        
-        if self.Game.round > 0 {
-            if self.Game.timeRemaining <= 1 {
+
+        if Game.round > 0 {
+            if Game.timeRemaining <= 1 {
                 DispatchQueue.main.asyncAfter(deadline: .now()) {
                     withAnimation(.interpolatingSpring(mass: 1.0,
                                                        stiffness: 100.0,
@@ -236,19 +251,19 @@ struct ContentView: View {
                         self.Game.timeRemaining = UserDefaults.standard.integer(forKey: "time")
                     }
                 }
-                
+
                 withAnimation(.easeInOut) {
                     self.Game.isActive = false
                 }
-                
-                if self.removeRound == true {
-                    self.Game.round -= 1
-                    self.removeRound.toggle()
+
+                if removeRound == true {
+                    Game.round -= 1
+                    removeRound.toggle()
                 } else {
-                    self.removeRound.toggle()
+                    removeRound.toggle()
                 }
             }
-        } else if self.Game.round <= 1 {
+        } else if Game.round <= 1 {
             generator.impactOccurred()
             withAnimation(.easeInOut) {
                 self.TheSoundManager.endGame()
@@ -257,5 +272,4 @@ struct ContentView: View {
             }
         }
     }
-    
 }

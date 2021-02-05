@@ -1,20 +1,409 @@
-[
-    {
-        "word_id": 23,
-        "word": "palamut",
-        "level": 1,
-        "forbidden_words": ["balık", "deniz", "olta", "yakalamak", "uskumru", "ağaç", "sincap", "Karadeniz", "beyaz et", "kılçık", "torik", "meşe"]
-    },
-    {
-        "word_id": 24,
-        "level": 1,
-        "word": "olta",
-        "forbidden_words": ["deniz", "balık", "akarsu", "yakalamak", "takım", "iğne", "yem", "düşmek", "gelmek", "takılmak", "ağ", "avlanmak", "vurmak", "yutmak"]
-    },
-    {
-        "word_id": 25,
-        "level": 1,
-        "word": "kılçık",
-        "forbidden_words": ["balık", "yemek", "takılmak", "omurga", "kemik", "hayvan", "fasulye", "bakla", "ayıklamak", "tüy", "güreş"]
-    },
+[{
+    "forbidden_words": ["oyun", "tavla", "zeka", "şah mat", "kale", "vezir", "piyon", "fil", "at", "hamle", "kare", "tahta", "siyah", "taş", "takım", "müsabaka", "spor", "federasyon", "strateji", "turnuva", "beyin", "savaş", "açılış"],
+    "_id": "600095c18767d6610eadc901",
+    "word": "satranç",
+    "level": "1",
+    "createdAt": "2021-01-14T19:04:33.500Z",
+    "updatedAt": "2021-01-14T19:04:33.500Z",
+    "__v": 0
+},
+{
+    "forbidden_words": ["yoğurt", "ekmek", "poğaça", "çalmak", "Nasreddin Hoca", "peynir", "fermante", "enzim", "organizma", "takvim", "topluluk", "çalmak", "ekşi", "kuru", "yaş", "bozuk", "medeniyet", "toz", "küf", "tutmak", "yetiştirmek"],
+    "_id": "5f252b7c326496137aa35f64",
+    "word_id": "27",
+    "level": "1",
+    "word": "maya"
+},
+{
+    "forbidden_words": ["süre", "akmak", "geçmiş", "takvim", "saat", "gelecek", "ilaç", "alarm", "yolculuk", "kum saati", "aşımı", "bırakmak", "ruh", "vakit", "şimdiki", "fiiller", "geniş", "almak", "geçirmek", "dolmak", "tanımak", "kollamak", "yarışma", "öldürmek", "ayar", "tünel", "kazanmak", "uygun", "boş", "harcamak", "kaybetmek", "ayırmak", "tutmak", "çalmak", "çizelge", "dilim", "eski", "uzay", "kronometre", "ölçmek", "serbest", "kapsül", "bilimkurgu"],
+    "_id": "5f252b7c326496137aa35f71",
+    "word_id": "40",
+    "level": "1",
+    "word": "zaman"
+},
+{
+    "forbidden_words": ["deniz", "balık", "akarsu", "yakalamak", "takım", "iğne", "yem", "düşmek", "gelmek", "takılmak", "ağ", "avlanmak", "vurmak", "yutmak", "solucan", "kurşun", "sinek", "kanca", "sallamak", "makara", "misina", "sandal"],
+    "_id": "5f252b7c326496137aa35f8b",
+    "word_id": "24",
+    "level": "1",
+    "word": "olta"
+},
+{
+    "forbidden_words": ["cadde", "mahalle", "adres", "çocuk", "yol", "kalmak", "yerleşim", "ev", "cadde", "şehir", "dökülmek", "çıkmak", "yasak", "atmak", "ara", "arka", "çıkmaz", "kaldırım"],
+    "_id": "5f252b7c326496137aa35f97",
+    "word_id": "78",
+    "level": "1",
+    "word": "sokak"
+},
+{
+    "forbidden_words": ["sözlük", "yabancı dil", "bakmak", "kelime", "davranış", "mana", "meal", "çıkarmak", "gelmek", "eş", "zıt", "aramak", "yüklemek", "bakmak", "karmaşa", "vermek", "yitirmek", "önem"],
+    "_id": "5f252b7c326496137aa35f9a",
+    "word_id": "81",
+    "level": "1",
+    "word": "anlam",
+    "updatedAt": "2020-10-10T09:59:44.705Z"
+},
+{
+    "forbidden_words": ["ofis", "çalışmak", "patron", "marka", "sözleşme", "yasal", "para", "maaş", "beyaz yaka", "emek", "acente", "anonim", "limited", "işletme", "açmak", "kural", "iş"],
+    "_id": "5f252b7c326496137aa35faf",
+    "word_id": "101",
+    "level": "1",
+    "word": "şirket"
+},
+{
+    "forbidden_words": ["tepki", "etmek", "güç", "tesir", "sebep", "sonuç", "kötü", "iz", "göstermek", "yan", "ilaç", "tedavi", "sağlık", "doktor", "alan"],
+    "_id": "5f252b7c326496137aa35fbb",
+    "word_id": "114",
+    "level": "1",
+    "word": "etki"
+},
+{
+    "forbidden_words": ["bina", "ev", "tuğla", "asmak", "örmek", "inşaat", "kapı", "Berlin", "yapı", "iç", "dış", "taş", "dikey", "çökmek", "yıkılmak", "kerpiç", "bahçe", "engel", "konuşmak", "aşmak", "halı", "takvim", "resim", "yazı", "perde", "ağlama", "saat", "kapı", "ses", "kağıt", "hücre"],
+    "_id": "5f252b7c326496137aa35fd3",
+    "word_id": "137",
+    "level": "1",
+    "word": "duvar"
+},
+{
+    "forbidden_words": ["tarım", "yer", "çamur", "toz", "yüzey", "kireçli", "killi", "humuslu", "arazi", "tarla", "memleketli", "hemşehri", "ayak basmak", "vermek", "dikmek", "bitki", "kaymak", "saksı", "havalandırmak", "çapa", "eski", "ekmek", "erozyon", "çiftçi", "nadas", "saha", "almak", "gömmek", "çukur", "ağaç", "verimli", "bereket", "biçmek", "solucan", "taş", "kara", "çömlek", "kazı", "yol", "kıraç", "kerpiç", "tapu"],
+    "_id": "5f252b7c326496137aa35fe4",
+    "word_id": "155",
+    "level": "1",
+    "word": "toprak",
+    "updatedAt": "2020-10-23T12:21:41.183Z"
+},
+{
+    "forbidden_words": ["kalabalık", "baş", "tek", "birlikte", "beraber", "arkadaş", "sevgili", "sadece", "ama", "kişi", "ilişki", "kurt", "kalmak", "hissetmek", "duygu", "yaşamak", "ev"],
+    "_id": "5f252b7c326496137aa35ff6",
+    "word_id": "172",
+    "level": "1",
+    "word": "yalnız"
+},
+{
+    "forbidden_words": ["kitap", "defter", "kalem", "yazmak", "uçak", "origami", "yazıcı", "fotokopi", "sınav", "not", "paket", "helva", "kebap", "para", "kese", "ağaç", "duvar", "yaprak", "fener", "antetli", "iskambil", "dökmek", "fon", "yağlı", "turnusol", "üç", "cevap", "kuşe", "zımpara", "ikametkah", "karbon", "saman", "el işi", "tuvalet", "hamur", "ambalaj", "oyun", "borsa", "müsvedde", "kafa", "izin", "mazeret"],
+    "_id": "5f252b7c326496137aa3600b",
+    "word_id": "193",
+    "level": "1",
+    "word": "kağıt",
+    "updatedAt": "2020-08-03T15:33:05.019Z"
+},
+{
+    "forbidden_words": ["kitap", "yazmak", "okumak", "edebiyat", "şair", "mısra", "serbest", "Nazım Hikmet", "Turgut Uyar", "defter", "dinleti", "dinlemek", "lirik", "halk", "dize", "kafiye", "aşk", "epik", "uyak", "kıta", "dörtlük", "Orhan Veli", "metafor", "nazım", "duygu", "coşku", "akım", "sanat", "ölçü", "romantik"],
+    "_id": "5f252b7c326496137aa36020",
+    "word_id": "214",
+    "level": "1",
+    "word": "şiir",
+    "updatedAt": "2021-01-12T17:55:02.483Z"
+},
+{
+    "forbidden_words": ["moda", "araba", "manken", "rol", "örnek", "resim", "heykel", "sadakat", "iş", "şekil", "biçim", "benzer", "prototip", "ev", "uçak", "çıkarmak", "örgü", "dantel"],
+    "_id": "5f252b7c326496137aa3602b",
+    "word_id": "225",
+    "level": "1",
+    "word": "model",
+    "updatedAt": "2020-08-05T10:47:29.942Z"
+},
+{
+    "forbidden_words": ["görev", "iş", "büyüklük", "almak", "dağılım", "sınırsız", "yetki", "insiyatif", "üstlenmek", "mesuliyet", "sosyal", "yüklenmek", "ezilmek", "ağır", "yönetmek", "duygu", "bireysel", "vermek", "istemek", "davranış", "alan", "taşımak", "his", "kabul etmek", "paylaşmak", "hukuk", "idari", "red", "bilinç", "vicdan", "yasal", "maddi", "bölge", "sahip", "karakter", "sonuç"],
+    "_id": "5f252b7c326496137aa36083",
+    "word_id": "314",
+    "level": "1",
+    "word": "sorumluluk",
+    "updatedAt": "2020-10-21T17:35:45.914Z"
+},
+{
+    "forbidden_words": ["derli toplu", "temiz", "dağınık", "yöntem", "sistem", "kurmak", "nizam", "koymak", "sıralama", "yerleştirme", "tertip", "bozuk", "yönetim", "komplo", "sosyal", "aralık", "adil", "çevre", "değişmek", "uyum", "hile", "kara", "kurulu", "korumak", "vermek", "sağlamak", "ekonomik", "yasa"],
+    "_id": "5f252b7c326496137aa360bb",
+    "word_id": "368",
+    "level": "1",
+    "word": "düzen",
+    "updatedAt": "2020-10-22T17:16:05.103Z"
+},
+{
+    "forbidden_words": ["gazete", "matbaa", "baskı", "abone", "köşe yazısı", "bayii", "mizah", "kuşe kağıt", "düzenli", "süreli", "yayın", "mecmua", "edebiyat", "karikatür", "sinema", "spor", "tarih", "bilgisayar", "çocuk", "moda", "kapak", "promosyon", "haftalık", "güncel", "okumak", "sayı", "sektör", "magazin"],
+    "_id": "5f252b7c326496137aa360d5",
+    "word_id": "394",
+    "level": "1",
+    "word": "dergi",
+    "updatedAt": "2020-08-09T12:45:53.145Z"
+},
+{
+    "forbidden_words": ["para", "hesap", "matematik", "sonuç", "fatura", "saymak", "kalite", "vaka", "miktar", "ara", "ağırlık", "kontenjan", "işlem", "hacim", "değer"],
+    "_id": "5f252b7c326496137aa360e0",
+    "word_id": "405",
+    "level": "1",
+    "word": "toplam",
+    "updatedAt": "2020-08-10T11:34:35.081Z"
+},
+{
+    "forbidden_words": ["araba", "araç", "direksiyon", "yol", "trafik", "yolcu", "hayvan", "koyun", "inek", "çoban", "ehliyet", "belge", "kurs", "hata", "koltuk", "bilgisayar"],
+    "_id": "5f252b7c326496137aa360f6",
+    "word_id": "427",
+    "level": "1",
+    "word": "sürücü",
+    "updatedAt": "2020-08-10T15:45:54.289Z"
+},
+{
+    "forbidden_words": ["ev", "yaşamak", "apartman", "devlet", "memur", "müstakil", "vergi", "bina", "mimar", "emlak", "yuvarlak", "küre", "şekil", "konut", "yapı", "kiralık", "satılık", "çember", "dubleks", "uçan", "kalorifer", "kazan", "istihbarat", "hareket", "alan"],
+    "_id": "5f252b7c326496137aa3610a",
+    "word_id": "447",
+    "level": "1",
+    "word": "daire",
+    "updatedAt": "2020-08-11T10:32:21.075Z"
+},
+{
+    "forbidden_words": ["yasa", "avukat", "hakim", "savcı", "ceza", "suç", "nizam", "mahkeme", "adam", "çıkarmak", "dış", "kural", "çiğnemek", "tasarı", "koymak", "madde", "teklif", "orman", "enstrüman", "müzik", "tel", "parmak"],
+    "_id": "5f252b7c326496137aa36138",
+    "word_id": "491",
+    "level": "1",
+    "word": "kanun",
+    "updatedAt": "2020-08-12T17:18:52.854Z"
+},
+{
+    "forbidden_words": ["kontrol", "nokta", "açık", "görevli", "apartman", "site", "giriş", "banka", "kamera", "şerit", "vana", "düzen", "toplum", "emniyet", "sosyal", "kamu", "kulübe", "açık", "iç", "milli", "internet", "koruma", "tehlike", "kural", "iş", "soruşturma", "özel", "kapı", "mekan", "kaza", "suç"],
+    "_id": "5f252b7c326496137aa36145",
+    "word_id": "505",
+    "level": "1",
+    "word": "güvenlik",
+    "updatedAt": "2020-08-13T14:02:01.852Z"
+},
+{
+    "forbidden_words": ["maaş", "para", "iş", "meslek", "satın almak", "alışveriş", "minibüs", "bilet", "fiyat", "karşılık", "değer", "hizmet", "kiralama", "asgari", "net", "brüt", "vekalet", "giriş", "dolgun", "emek", "kazanç", "çalışmak", "izin", "bedel", "öğrenim", "sınav", "tarife", "geçiş"],
+    "_id": "5f252b7c326496137aa36160",
+    "word_id": "533",
+    "level": "1",
+    "word": "ücret",
+    "updatedAt": "2020-08-17T11:48:00.489Z"
+},
+{
+    "forbidden_words": ["kurmak", "görmek", "etmek", "rüya", "istemek", "çocukluk", "dalmak", "güç", "kırıklık", "meyal", "zihin", "canlandırmak", "imge", "gerçek", "olmak", "kapılmak", "sükut", "yaşamak", "yaratıcı", "sanatçı"],
+    "_id": "5f252b7c326496137aa3617c",
+    "word_id": "561",
+    "level": "1",
+    "word": "hayal",
+    "updatedAt": "2020-08-18T10:57:40.140Z"
+},
+{
+    "forbidden_words": ["sağlık", "besin", "destek", "eczane", "doktor", "hastalık", "grip", "yararlı", "spor", "destek", "kabuk", "meyve", "sebze", "grup", "hap", "günlük", "eksik", "takviye", "mineral"],
+    "_id": "5f252b7c326496137aa36182",
+    "word_id": "567",
+    "level": "1",
+    "word": "vitamin",
+    "updatedAt": "2020-08-18T11:30:59.862Z"
+},
+{
+    "forbidden_words": ["şırınga", "doktor", "hastalık", "penisilin", "aşı", "kirpi", "akrep", "sokmak", "dikiş", "terzi", "iplik", "delik", "sivri", "çengelli", "toplu", "prova", "akrep", "arı", "sokmak", "enjektör", "oya", "kravat", "insülin", "olta", "yorgan", "çuvaldız", "fobi", "vurmak", "batmak", "ada", "kan", "serum", "akupunktur", "tedavi"],
+    "_id": "5f252b7c326496137aa3618f",
+    "word_id": "580",
+    "level": "1",
+    "word": "iğne",
+    "updatedAt": "2020-08-18T14:52:44.181Z"
+},
+{
+    "forbidden_words": ["karakter", "iskelet", "kılçık", "vücut", "anatomi", "kemik", "sırt", "boyun", "kaburga", "gemi", "belkemiği", "eğri", "insan"],
+    "_id": "5f252b7c326496137aa36198",
+    "word_id": "589",
+    "level": "1",
+    "word": "omurga",
+    "updatedAt": "2020-08-18T17:36:12.514Z"
+},
+{
+    "forbidden_words": ["zehir", "yılan", "akrep", "alerji", "iğne", "şok", "antidot", "iyileştirmek", "etki", "ısırmak", "sokmak", "şişmek"],
+    "_id": "5f252b7c326496137aa361a4",
+    "word_id": "601",
+    "level": "1",
+    "word": "panzehir",
+    "updatedAt": "2020-08-25T13:40:30.366Z"
+},
+{
+    "forbidden_words": ["para", "hesap", "restorant", "sipariş", "yemek", "içecek", "garson", "fiş", "kağıt", "masa", "istemek", "gelmek", "sistem", "kafe", "lokanta"],
+    "_id": "5f252b7c326496137aa361b3",
+    "word_id": "616",
+    "level": "1",
+    "word": "adisyon",
+    "updatedAt": "2020-08-25T16:41:37.021Z"
+},
+{
+    "forbidden_words": ["görmek", "duyu", "organ", "yüz", "kafa", "baş", "nazar", "bakmak", "bulanık", "miyop", "hipermetrop", "astigmat", "doktor", "lens", "oda", "alacaklı", "düşmek", "girmek", "ucu", "açtırmamak", "atmak", "aydın", "boyamak", "değmek", "sürme", "kalem", "far", "rimel", "çıkarmak", "geçirmek", "ırak", "kaybetmek", "dikmek", "doldurmak", "gelmek", "gezdirmek", "kamaştırmak", "kirpik", "kırpmak", "kapak", "koymak", "kulak", "dolmak", "fıldır fıldır", "inanmak", "kaçırmak", "sulanmak", "yaşarmak", "açılmak", "dönmek", "kamaşmak", "dalmak", "doymak", "ısırmak", "kalmak", "korkmak", "bebek", "büyütmek", "tutmamak", "yummak", "alıcı", "alt", "banyo", "dağ", "doktor", "hapis", "karar", "nur", "yaş", "çekik", "badem", "ağrı", "kara", "tepe", "hak", "pınar", "dört", "kem", "para", "balık", "torpido"],
+    "_id": "5f252b7c326496137aa361cc",
+    "word_id": "637",
+    "level": "1",
+    "word": "göz",
+    "updatedAt": "2020-08-26T16:59:10.028Z"
+},
+{
+    "forbidden_words": ["Güneş", "gemi", "deniz", "doğmak", "su", "dip", "sivri", "sıvı", "iflas", "kirlenmek", "saplanmak", "rahat", "çıkmak", "çırpınmak", "tekne"],
+    "_id": "5f252b7c326496137aa361df",
+    "word_id": "656",
+    "level": "1",
+    "word": "batmak",
+    "updatedAt": "2020-08-27T09:18:06.255Z"
+},
+{
+    "forbidden_words": ["aktör", "oyuncu", "aktrist", "gitmek", "canlı", "sahne", "oyun", "perde", "senaryo", "tirat", "dekor", "müzikal", "drama", "sanat", "komedi", "doğaçlama", "ışık", "devlet", "özel", "izleyici", "yazmak", "kabare", "açık hava", "kukla", "kostüm", "edebiyat", "prova", "ezber", "karakter", "eser", "televizyon", "sinema", "sezon", "bilet", "afiş", "belediye", "seçme", "konservatuar", "rol", "salon", "gezici"],
+    "_id": "5f252b7c326496137aa36206",
+    "word_id": "695",
+    "level": "1",
+    "word": "tiyatro",
+    "updatedAt": "2020-12-07T12:35:24.685Z"
+},
+{
+    "forbidden_words": ["mevzu", "ders", "tahta", "başlık", "toplantı", "manken", "açmak", "kapamak", "okul", "öğretmen", "durum", "bahis", "ana", "söz", "dış", "işlemek", "olmak", "seçmek", "değiştirmek", "ortaya atmak", "komşu", "içerik"],
+    "_id": "5f252b7c326496137aa36244",
+    "word_id": "758",
+    "level": "1",
+    "word": "konu",
+    "updatedAt": "2020-10-21T15:06:04.777Z"
+},
+{
+    "forbidden_words": ["buluşma", "sevgili", "çıkmak", "iş", "toplantı", "arkadaş", "vermek", "almak", "doktor", "hastane", "muayene", "sağlık ocağı", "diş", "bakım", "saat", "beklemek", "kaçırmak"],
+    "_id": "5f252b7c326496137aa36249",
+    "word_id": "763",
+    "level": "1",
+    "word": "randevu"
+},
+{
+    "forbidden_words": ["kapı", "kilit", "çoğaltma", "açmak", "kapamak", "araba", "ev", "ofis", "kasa", "unutmak", "girmek", "sol", "araç", "kelime", "şehir", "vermek", "kaybetmek", "bijon", "İngiliz", "cevap", "elektrik", "kontak", "çilingir", "delik", "teslim"],
+    "_id": "5f252b7c326496137aa36263",
+    "word_id": "789",
+    "level": "1",
+    "word": "anahtar",
+    "updatedAt": "2020-10-11T10:22:14.366Z"
+},
+{
+    "forbidden_words": ["ilerleme", "büyüme", "ülke", "giriş", "sonuç", "toplum", "sosyal", "boy", "yetişmek", "daha iyi", "olgunlaşma", "sıcak", "vücut", "konu", "alan", "meslek", "kişisel", "ekonomik", "yeni"],
+    "_id": "5f252b7c326496137aa360b2",
+    "word_id": "299",
+    "level": "1",
+    "word": "gelişme",
+    "updatedAt": "2020-08-08T11:07:15.610Z"
+},
+{
+    "forbidden_words": ["ateş", "kibrit", "çakmak", "ocak", "kına", "sürmek", "tutuşturmak", "çıra", "mangal", "orman", "lamba", "ışık", "soba", "kalorifer", "mazot", "benzin", "doğalgaz", "mide", "zarar vermek", "güneşlenmek", "bronzlaşmak", "zarara uğratmak", "mahvetmek", "aşk", "bilet", "yıkmak", "ağıt", "kömür", "odun", "şömine", "acı"],
+    "_id": "5f252b7c326496137aa360c0",
+    "word_id": "373",
+    "level": "1",
+    "word": "yakmak",
+    "updatedAt": "2020-08-08T13:29:53.981Z"
+},
+{
+    "forbidden_words": ["ülke", "şehir", "coğrafya", "çizmek", "pasaport", "geçmek", "sabır", "harita", "aşmak", "çekmek", "had", "dış", "hudut", "ilçe", "uç", "son", "zorlamak", "kapı", "pasaport", "yaş", "açlık", "yoksulluk", "tanımamak", "ticaret", "günlük", "limit"],
+    "_id": "5f252b7c326496137aa360c5",
+    "word_id": "378",
+    "level": "1",
+    "word": "sınır",
+    "updatedAt": "2020-08-08T14:21:45.903Z"
+},
+{
+    "forbidden_words": ["alçak", "yüksek", "döviz", "borsa", "altın", "düşmek", "motivasyon", "fiyat", "dağ", "artmak", "rütbe", "iş", "kariyer", "zirve", "terfi", "sinirlenmek", "öfkelenmek", "ses", "kavga", "tartışma", "tansiyon", "kan şekeri", "sayı", "faiz"],
+    "_id": "5f252b7c326496137aa360d3",
+    "word_id": "392",
+    "level": "1",
+    "word": "yükselmek",
+    "updatedAt": "2020-08-09T12:35:57.768Z"
+},
+{
+    "forbidden_words": ["kıymet", "fırsat", "geri dönüşüm", "eski", "ikinci el", "jüri", "başvuru", "teklif", "atık", "yarar sağlamak", "kullanmak", "incelemek", "kıymetlendirmek", "eleştirmen", "müsrif", "şans", "dış", "ara", "ölçme", "rapor", "performans", "kitap", "doğru"],
+    "_id": "5f252b7c326496137aa360f4",
+    "word_id": "425",
+    "level": "1",
+    "word": "değerlendirmek",
+    "updatedAt": "2020-08-10T15:40:58.049Z"
+},
+{
+    "forbidden_words": ["şans", "yakalamak", "kovalamak", "kazanç", "beklemek", "bilmek", "bulmak", "çıkmak", "vermek", "kaçırmak", "kollamak", "istifade", "eşitlik", "site", "satış", "pazarlama", "reklam", "özel", "tatil", "maliyet", "olanak", "imkan", "vesile", "faydalanmak", "yaratmak"],
+    "_id": "5f252b7c326496137aa3610b",
+    "word_id": "448",
+    "level": "1",
+    "word": "fırsat",
+    "updatedAt": "2020-08-11T10:40:28.904Z"
+},
+{
+    "forbidden_words": ["devlet", "çalışmak", "memur", "mal", "dava", "düzen", "prosedür", "diplomasi", "halk", "hizmet", "güvenlik", "hukuk", "oy", "sağlık", "yönetim", "kurum", "sektör", "yarar", "spot", "toplum", "personel"],
+    "_id": "5f252b7c326496137aa3611d",
+    "word_id": "465",
+    "level": "1",
+    "word": "kamu",
+    "updatedAt": "2020-08-12T13:25:01.792Z"
+},
+{
+    "forbidden_words": ["protein", "hormon", "salgılamak", "biyoloji", "kimyasal", "vücut", "tepkime", "hızlandırmak", "katalizör", "sentez", "metabolizma", "organik", "yapay"],
+    "_id": "5f252b7c326496137aa361ab",
+    "word_id": "608",
+    "level": "2",
+    "word": "enzim",
+    "updatedAt": "2020-08-25T14:41:43.222Z"
+},
+{
+    "forbidden_words": ["onaylamak", "patent", "ürün", "firma", "fabrika", "kaşe", "evrak", "eser", "hukuk", "alışveriş", "ünlü", "pahalı", "kalite", "yenilik", "değer", "lisans", "ticari", "kurumsal", "resmi"],
+    "_id": "5f252b7c326496137aa36280",
+    "word_id": "818",
+    "level": "2",
+    "word": "tescilli marka"
+},
+{
+    "forbidden_words": ["marka", "çeşit", "sallamak", "serinlemek", "sıcak", "fabrika", "endüstri", "sanayi", "imalat", "tedarik", "katalog", "seçmek", "tüketici", "kullanıcı", "ticari", "kurumsal", "şirket", "hizmet"],
+    "_id": "5f252b7c326496137aa36284",
+    "word_id": "822",
+    "level": "2",
+    "word": "ürün yelpazesi",
+    "updatedAt": "2020-08-28T16:43:36.047Z"
+},
+{
+    "forbidden_words": ["sorumluluk", "tembel", "uyumak", "yatak", "ön", "arka", "durmak", "gitmek", "keyif", "pozisyon", "üşenmek", "ilgilenmemek", "karışmamak", "uğraşmamak", "zevk", "sefa", "eğlenmek", "rahat", "çalışmak"],
+    "_id": "5f252b7c326496137aa3628b",
+    "word_id": "829",
+    "level": "2",
+    "word": "yan gelip yatmak",
+    "updatedAt": "2020-08-27T17:45:47.709Z"
+},
+{
+    "forbidden_words": ["iş", "gereksiz", "zaman kaybı", "yük", "ıvır zıvır", "görev", "ücretsiz", "karşılıksız", "eziyet", "külfet", "çömez", "çalışmak", "yasak", "mecburi"],
+    "_id": "5f252b7c326496137aa362c3",
+    "word_id": "885",
+    "level": "2",
+    "word": "angarya",
+    "updatedAt": "2020-08-27T19:05:19.583Z"
+},
+{
+    "forbidden_words": ["anlatım", "biçim", "sinema", "film", "akım", "teori", "eski", "deniz", "fransız", "kural", "tabu", "sansür", "özgürleşme", "yönetmen", "izlemek", "sanat", "edebiyat", "bakış açısı", "deneysel", "toplum"],
+    "_id": "5f252b7c326496137aa362d1",
+    "word_id": "897",
+    "level": "2",
+    "word": "yeni dalga"
+},
+{
+    "forbidden_words": ["stratejik", "savaş", "ülke", "televizyon", "program", "tutmak", "karşı", "yer", "alan", "siyaset", "seçmek", "nötr", "karar", "asker", "ordu", "arındırmak"],
+    "_id": "5f252b7c326496137aa362d5",
+    "word_id": "900",
+    "level": "2",
+    "word": "tarafsız bölge"
+},
+{
+    "forbidden_words": ["meyve", "sebze", "hal", "satmak", "aracı", "çiftçi", "ticaret", "meslek", "iş", "üretici", "toptan", "komisyon", "para"],
+    "_id": "60008f998767d6610eadc8fb",
+    "word": "kabzımal",
+    "level": "2",
+    "createdAt": "2021-01-14T18:38:17.523Z",
+    "updatedAt": "2021-01-14T18:38:17.523Z",
+    "__v": 0
+},
+{
+    "forbidden_words": ["sanrı", "görmek", "hayal", "gerçek", "rüya", "illüzyon", "serap", "çöl", "hasta", "ateş", "uyku", "algı", "beyin", "biliçaltı", "psikolog"],
+    "_id": "5fff3fae8767d6610eadc8f3",
+    "word": "halüsinasyon",
+    "level": "2",
+    "createdAt": "2021-01-13T18:45:02.511Z",
+    "updatedAt": "2021-01-13T18:45:02.511Z",
+    "__v": 0
+},
+{
+    "forbidden_words": ["ağırlık", "ölçü", "birim", "kilo", "tartı", "terazi", "eski", "alt", "tokat", "laf", "padişah", "saray"],
+    "_id": "5ffde01f8767d6610eadc8d6",
+    "word": "okka",
+    "level": "2",
+    "createdAt": "2021-01-12T17:45:03.197Z",
+    "updatedAt": "2021-01-12T17:45:03.197Z",
+    "__v": 0
+}
 ]

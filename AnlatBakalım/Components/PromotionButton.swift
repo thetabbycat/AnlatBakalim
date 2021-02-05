@@ -21,10 +21,10 @@ struct PromotionButton: View {
                 Text("🤷‍♂️")
                     .font(.system(size: 40))
                 VStack(alignment: .leading) {
-                    Text("Eğlence devam etsin!")
+                    Text("Kartlar bitti!")
                         .font(.custom("monogramextended", size: 20))
                         .fontWeight(.bold)
-                    Text("Kartların sonuna geldin ama +1500 yeni kelime daha var!\nSatın almak için dokun.")
+                    Text("Merak etme daha fazlası var! Sürekli güncellenen kelime setini \nsatın almak için dokun.")
                         .font(.custom("monogramextended", size: 16))
                 }
             }

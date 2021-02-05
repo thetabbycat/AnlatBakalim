@@ -6,8 +6,8 @@
 //  Copyright © 2020 Steven J. Selcuk. All rights reserved.
 //
 
-import SwiftUI
 import CardStack
+import SwiftUI
 
 struct ForbiddenWordItem: View {
     var forb: String
@@ -28,56 +28,37 @@ struct SingleWordItem: View {
     var swipeCount: Int
     var count: Int
     let direction: LeftRight?
-    
+
     var isPremium = UserDefaults.standard.optionalBool(forKey: "isSubscribed") ?? false
 
     var body: some View {
         GeometryReader { _ in
-            if swipeCount == count && isPremium == false {
-                VStack {
-                    Text("Daha fazla kelime")
-                        .lineLimit(2)
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(.black)
-                        .font(.custom("Kalam Bold", size: self.isIpad ? 48 : 32))
-                        .padding(.all, 30)
-                        .fixedSize(horizontal: false, vertical: true)
-                    
-                    Text("Satın almak için dokun")
-                }
-                
-                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
-                
-                
-            } else {
-                VStack {
-                    Text("\(self.item.word ?? "Bir hata oluştu.")")
-                        .lineLimit(2)
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(.black)
-                        .font(.custom("Kalam Bold", size: self.isIpad ? 48 : 32))
-                        .padding(.all, 30)
-                        .fixedSize(horizontal: false, vertical: true)
-                    
-                    VStack(alignment: .leading) {
-                        if self.item.forbiddenWords?.isEmpty == false {
-                            ForEach((NSKeyedUnarchiver.unarchiveObject(with: self.item.forbiddenWords!) as? [String])?.shuffled().prefix(5) ?? ["Yasaklı Kelime"], id: \.self) {
-                                ForbiddenWordItem(forb: "\($0)", isIpad: self.isIpad)
-                            }
+            VStack {
+                Text("\(self.item.word ?? "Bir hata oluştu.")")
+                    .lineLimit(2)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.black)
+                    .font(.custom("Kalam Bold", size: self.isIpad ? 48 : 32))
+                    .padding(.all, 30)
+                    .fixedSize(horizontal: false, vertical: true)
+
+                VStack(alignment: .leading) {
+                    if self.item.forbiddenWords?.isEmpty == false {
+                        ForEach((NSKeyedUnarchiver.unarchiveObject(with: self.item.forbiddenWords!) as? [String])?.shuffled().prefix(5) ?? ["Yasaklı Kelime"], id: \.self) {
+                            ForbiddenWordItem(forb: "\($0)", isIpad: self.isIpad)
                         }
-                    }.animation(nil)
-                }
-                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+                    }
+                }.animation(nil)
             }
-            
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
         }
         .background(
             Image("CardBGImage")
                 .resizable()
                 .frame(maxWidth: .infinity, maxHeight: .infinity))
         //   .opacity(direction == .right ? 0 : 1)
-      //  .cornerRadius(6)
-       // .drawingGroup()
+        //  .cornerRadius(6)
+        // .drawingGroup()
         .shadow(color: Color("Ebony").opacity(0.6), radius: 20, x: 0, y: 20)
         //     .animation(.linear)
     }

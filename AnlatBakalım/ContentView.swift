@@ -11,7 +11,6 @@ struct ContentView: View {
     @ObservedObject var fetcher = Fetcher()
     @ObservedObject var Game = GameManager()
     @ObservedObject var TheSoundManager = SoundManager()
-    @ObservedObject var subscriptionManager = SubscriptionManager()
 
     var isIpad = UIDevice.current.model.hasPrefix("iPad")
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -32,12 +31,6 @@ struct ContentView: View {
 
     @State var swipeCounter = 0
 
-    @State var isPremium = UserDefaults.standard.optionalBool(forKey: "isSubscribed") ?? false
-    // var isPremium = false
-
-    @State var changeThis = true
-
-    let randPromo = promotText.randomElement()
     init() {
         /**
          do {
@@ -49,7 +42,9 @@ struct ContentView: View {
          print("no connection")
          }
          */
-
+        
+        
+        fetcher.getFreeWords()
         UIApplication.shared.isIdleTimerDisabled = true
     }
 
@@ -67,23 +62,29 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            if self.swipeCounter > self.fetcher.words.count - 1 && self.Game.isActive == true && self.subscriptionManager.subscriptionStatus == false {
-                PromotionButton(onTap: {
-                    generator.impactOccurred()
-                    self.subscriptionManager.buttonAction(purchase: subscriptionManager.lifetime!)
-                    Game.ended = false
-                    Game.isActive = false
-                })
-            }
+            
+            /**
+             
+             if self.swipeCounter > self.fetcher.words.count - 1 && self.Game.isActive == true && self.subscriptionManager.subscriptionStatus == false {
+             PromotionButton(onTap: {
+             generator.impactOccurred()
+             self.subscriptionManager.buttonAction(purchase: subscriptionManager.lifetime!)
+             Game.ended = false
+             Game.isActive = false
+             })
+             }
+             
+             if self.subscriptionManager.subscriptionStatus == false && self.Game.ended == false && self.Game.round >= 1 {
+             PromotionBanner(onTap: {
+             generator.impactOccurred()
+             self.subscriptionManager.buttonAction(purchase: subscriptionManager.lifetime!)
+             Game.ended = false
+             Game.isActive = false
+             }, isIpad: self.isIpad, item: self.randPromo!)
+             }
+             
+             */
 
-            if self.subscriptionManager.subscriptionStatus == false && self.Game.ended == false && self.Game.round >= 1 {
-                PromotionBanner(onTap: {
-                    generator.impactOccurred()
-                    self.subscriptionManager.buttonAction(purchase: subscriptionManager.lifetime!)
-                    Game.ended = false
-                    Game.isActive = false
-                }, isIpad: self.isIpad, item: self.randPromo!)
-            }
 
             SettingsButton(onTap: { generator.impactOccurred()
                 self.isSettingsOpen.toggle()
@@ -100,7 +101,6 @@ struct ContentView: View {
                                blueTeamName: $blueTeamName,
                                teamRed: self.Game.teamRed,
                                teamBlue: self.Game.teamBlue,
-                               isPremium: self.subscriptionManager.subscriptionStatus,
                                isIpad: self.isIpad,
                                round: self.Game.round,
                                timeRemaining: self.Game.timeRemaining
@@ -113,11 +113,9 @@ struct ContentView: View {
                                   blueTeamName: $blueTeamName,
                                   teamRed: self.Game.teamRed,
                                   teamBlue: self.Game.teamBlue,
-                                  isPremium: self.subscriptionManager.subscriptionStatus,
                                   isIpad: self.isIpad,
                                   onPurchase: {
                                       generator.impactOccurred()
-                                      self.subscriptionManager.buttonAction(purchase: subscriptionManager.lifetime!)
                                       Game.ended = false
                                       Game.isActive = false
                                   },
@@ -128,13 +126,7 @@ struct ContentView: View {
                     CardStackView(wordStack: self.fetcher.words, onSwipeAction: { direction in
                         let impactMed = UINotificationFeedbackGenerator()
                         self.swipeCounter += 1
-                        if self.swipeCounter == self.fetcher.words.count - 1 {
-                            if self.subscriptionManager.subscriptionStatus {
-                                self.fetcher.words = self.fetcher.fetchLocalUsers().filter { $0.level == level }.shuffled()
-                            } else {
-                                self.fetcher.words = self.fetcher.fetchLocalUsers().filter { $0.level == level }
-                            }
-                        }
+                        self.fetcher.words = self.fetcher.fetchLocalUsers().filter { $0.level == level }.shuffled()
 
                         if direction == .left {
                             self.isWrong = true
@@ -219,6 +211,8 @@ struct ContentView: View {
         .onAppear {
             StoreReviewHelper.incrementAppOpenedCount()
             StoreReviewHelper.checkAndAskForReview()
+
+            fetcher.words = fetcher.fetchLocalUsers().filter { $0.level == level }.shuffled()
         }
         .background(
             Image("MainBGImage")
@@ -229,7 +223,7 @@ struct ContentView: View {
         .sheet(isPresented: self.$isSettingsOpen, onDismiss: {
             self.refresh()
         }) {
-            SettingsView(paymentManager: self.subscriptionManager)
+            SettingsView()
         }
     }
 

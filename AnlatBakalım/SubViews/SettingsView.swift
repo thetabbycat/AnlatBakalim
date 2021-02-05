@@ -43,7 +43,6 @@ struct SettingsButton: View {
 
 struct SettingsView: View {
 
-    var paymentManager: SubscriptionManager
     @State var roundTimeSelection = UserDefaults.standard.optionalInt(forKey: "roundTimeSelection") ?? 1
     @State var levelSelection = UserDefaults.standard.optionalInt(forKey: "levelSelection") ?? 0
     @State var roundTime = UserDefaults.standard.integer(forKey: "time")
@@ -75,34 +74,37 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             Form {
-                if SubscriptionManager().subscriptionStatus == false {
-                    Section(header: Text("Premium")) {
-                        HStack {
-                            HStack(alignment: .center) {
-                                Text("🔒")
-                                    .font(.system(size: 40))
-                                VStack(alignment: .leading) {
-                                    Text("Zaten premium kullanıcı mısın?")
-                                        .font(.custom("monogramextended", size: 20))
-                                        .fontWeight(.bold)
-                                    Text("Geri yüklemek için buraya dokun")
-                                        .font(.custom("monogramextended", size: 16))
-                                }
-                            }
-                        }
-                        .onTapGesture {
-                            
-                            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-                                self.paymentManager.objectWillChange.send()
-                                self.paymentManager.restorePurchase()
-                            }
-                            
-                            
-                         
-                           
-                        }
-                    }
-                }
+                /**
+                 if SubscriptionManager().subscriptionStatus == false {
+                 Section(header: Text("Premium")) {
+                 HStack {
+                 HStack(alignment: .center) {
+                 Text("🔒")
+                 .font(.system(size: 40))
+                 VStack(alignment: .leading) {
+                 Text("Zaten premium kullanıcı mısın?")
+                 .font(.custom("monogramextended", size: 20))
+                 .fontWeight(.bold)
+                 Text("Geri yüklemek için buraya dokun")
+                 .font(.custom("monogramextended", size: 16))
+                 }
+                 }
+                 }
+                 .onTapGesture {
+                 
+                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                 self.paymentManager.objectWillChange.send()
+                 self.paymentManager.restorePurchase()
+                 }
+                 
+                 
+                 
+                 
+                 }
+                 }
+                 }
+                 */
+
 
                 Section(header: Text("Oyun Ayarları")) {
                     Picker(selection: $levelSelection, label: Text("Zorluk seviyesi")) {

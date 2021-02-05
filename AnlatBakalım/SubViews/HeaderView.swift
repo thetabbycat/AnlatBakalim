@@ -15,7 +15,6 @@ struct HeaderView: View {
     @Binding var blueTeamName: String
     var teamRed: Int
     var teamBlue: Int
-    var isPremium: Bool
     var isIpad: Bool
     var round: Int
     var timeRemaining: Int
@@ -44,7 +43,7 @@ struct HeaderView: View {
                     .transition(AnyTransition.asymmetric(insertion: .move(edge: .bottom), removal: .move(edge: .bottom)).combined(with: .opacity))
                     //   .if(self.Game.currentTeam == "red") { $0.multicolorGlow(rotation: self.Game.teamRed) }
                     .modifier(ShakeEffect(shakes: self.teamRed * 2))
-                   .if(self.isPremium) { $0.contextMenu {
+                    .contextMenu {
                         Button(action: {
                             self.redTeamEmoji = "🥑"
                             self.redTeamName = "Avokadolar"
@@ -69,7 +68,7 @@ struct HeaderView: View {
                         }) {
                             Text("🐈 Kedi Kuyruğu")
                         }
-                    } }
+                    }
 
                 Text("\(self.teamRed)")
                     .foregroundColor(Color("MineShaft"))
@@ -95,7 +94,7 @@ struct HeaderView: View {
                     .transition(AnyTransition.asymmetric(insertion: .move(edge: .bottom), removal: .move(edge: .bottom)).combined(with: .opacity))
                     .modifier(ShakeEffect(shakes: self.teamBlue * 2))
                     //     .if(self.Game.currentTeam == "blue") { $0.multicolorGlow(rotation: self.Game.teamBlue) }
-                    .if(self.isPremium) { $0.contextMenu {
+                    .contextMenu {
                         Button(action: {
                             self.blueTeamEmoji = "🚀"
                             self.blueTeamName = "Roket Takımı"
@@ -120,7 +119,6 @@ struct HeaderView: View {
                         }) {
                             Text("🦮 Köpek Burnu")
                         }
-                    }
                     }
 
                 Text("\(self.teamBlue)")
